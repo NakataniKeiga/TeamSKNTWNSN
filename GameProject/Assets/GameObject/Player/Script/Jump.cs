@@ -7,7 +7,7 @@ public class Jump : MonoBehaviour
     private Rigidbody rd;
 
     private bool Grounded = true;
-    public float Jumppower = 10;
+    public float Jumppower = 300;
 
     // Start is called before the first frame update
     void Start()
