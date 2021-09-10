@@ -16,12 +16,12 @@ public class Move_block : MonoBehaviour
     void Start()
     {
         // ゲーム開始時の位置
-        startPosition = this.transform.position;
+        startPosition = this.transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-		transform.position = new Vector3((Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeX + startPosition.x), (Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeY + startPosition.y), (Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeZ + startPosition.z));
+		transform.localPosition = new Vector3((Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeX + startPosition.x), (Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeY + startPosition.y), (Mathf.Sin((Time.time) * amplitudeSpeed) * amplitudeZ + startPosition.z));
     }
 }
