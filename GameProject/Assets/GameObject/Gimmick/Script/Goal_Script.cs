@@ -21,7 +21,23 @@ public class Goal_Script : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name, UnloadSceneOptions.None);
 
+            if(SceneManager.GetActiveScene().name == "MocStage1")
+            {
+                SceneManager.LoadScene("MocStage2",LoadSceneMode.Single);
+                Debug.Log("ステージ２へ");
+            }
+            else if(SceneManager.GetActiveScene().name == "MocStage2")
+            {
+                SceneManager.LoadScene("MocStage3", LoadSceneMode.Single);
+                Debug.Log("ステージ3へ");
+            }
+            else if(SceneManager.GetActiveScene().name == "MocStage3")
+            {
+                SceneManager.LoadScene("ClearScene",LoadSceneMode.Single);
+                Debug.Log("Clearへ");
+            }
         }
     }
 }

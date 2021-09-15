@@ -31,7 +31,7 @@ public class Right : MonoBehaviour
 
       
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isSpace = true;
         }
