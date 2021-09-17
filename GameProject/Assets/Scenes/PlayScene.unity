@@ -808,6 +808,8 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
+  isLight_Flg: 0
+  count: 0
 --- !u!4 &1216976170
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,6 +1234,10 @@ PrefabInstance:
     - target: {fileID: 1197824758352883930, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
       propertyPath: m_Center.z
       value: -0.09349295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500595171622887943, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2500595171622887943, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
       propertyPath: move_speed

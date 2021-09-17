@@ -9,11 +9,14 @@ public class Player : MonoBehaviour
     float z;
 
     public bool change = true;
-
     private Rigidbody rigidbody_;
     private Animator animator_;
-
     private Vector3 PlayerPos;
+
+    GameObject player;
+    Right script;
+
+
 
     Vector3 movingDirecion = Vector3.zero;
 
@@ -27,6 +30,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("moc_player");
+        script = player.GetComponent<Right>();
+
         //PlayerPos = GetComponent<Transform>().position;
         rigidbody_ = GetComponent<Rigidbody>();
         rigidbody_.constraints = RigidbodyConstraints.FreezeRotation;
@@ -37,27 +43,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //// 左右キーを押した時の値（0～1）
-        x = Input.GetAxis("Horizontal") * move_speed;
 
-        PlayerPos = new Vector3(x, 0, 0);
+        if (script.ischange == false)
+        {
 
-       
-        //↑キーで歩きモーションへ
+            //// 左右キーを押した時の値（0～1）
+            x = Input.GetAxis("Horizontal") * move_speed;
 
-        cameraPos = this.gameObject.transform.position;
-        cameraPos.y += 5f;
-        cameraPos.z += -20f;
-        maincamera.transform.position = cameraPos;
-        if(Input.GetKey(KeyCode.LeftArrow))
+
+ if (Input.GetKey(KeyCode.RightArrow))
         {
             change = false;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            change =false;
+            change = false;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             change = true;
         }
@@ -66,10 +68,26 @@ public class Player : MonoBehaviour
             change = true;
         }
 
+
+
+        }
+      
+
+        PlayerPos = new Vector3(x, 0, 0);
+
+
+        //↑キーで歩きモーションへ
+
+        cameraPos = this.gameObject.transform.position;
+        cameraPos.y += 5f;
+        cameraPos.z += -20f;
+        maincamera.transform.position = cameraPos;
+       
+
         if (PlayerPos.magnitude > 0.1)
         {
             transform.rotation = Quaternion.LookRotation(PlayerPos);
-            transform.Translate(Vector3.forward * move_speed* Time.deltaTime);
+            transform.Translate(Vector3.forward * move_speed * Time.deltaTime);
         }
 
     }
@@ -84,4 +102,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public float GetSpeed()
+    {
+        return move_speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        move_speed = speed;
+    }
+        
+   
 }

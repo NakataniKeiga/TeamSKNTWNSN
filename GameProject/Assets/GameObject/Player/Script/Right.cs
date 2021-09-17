@@ -7,11 +7,15 @@ public class Right : MonoBehaviour
     private Vector3 lastVelocity;//速度ベクトル
     private Rigidbody rb;//Rigidbody用
     public float light_speed = 50;
-    private bool isSpace=false;
+    public bool ischange = false;
+    public bool liftstatus = false;
 
     GameObject player;
-
     Player script;
+
+    GameObject stage;
+    stage_test_script StageScript;
+
 
     Vector3 PlayerPos;
 
@@ -19,47 +23,60 @@ public class Right : MonoBehaviour
 
     void Start()
     {
+
         player = GameObject.Find("moc_player");
         script = player.GetComponent<Player>();
 
+        stage = GameObject.Find("stageReturn");
+        StageScript = stage.GetComponent<stage_test_script>();
 
-      rb = GetComponent<Rigidbody>();
+
+        rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
     {
-
-      
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (StageScript.isLight_Flg == true)
         {
-            isSpace = true;
+            if (ischange ==false)
+            {
+
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    liftstatus = true;
+                    ischange = true;
+
+
+                }
+            }
+
         }
-        
+
     }
 
     void FixedUpdate()
     {
         if (script.change == true)
         {
-                if (isSpace==true)
+                if (liftstatus == true)
                 {
-                    rb.useGravity = false;
-                    isSpace = false;
-                    rb.AddForce(new Vector3(-light_speed, 0, 0));
-                    isSpace = false;
+                rb.useGravity = false;
+                liftstatus = false;
+                rb.AddForce(new Vector3(-light_speed, 0, 0));
+               
                 }
         }
         else
         {
             if (script.change == false)
             {
-                if (isSpace==true)
+                if (liftstatus == true)
                 {
                     rb.useGravity = false;
-                    isSpace = false;
+                    liftstatus = false;
                     rb.AddForce(new Vector3(light_speed, 0, 0));
-                    isSpace = false;
+                   
                 }
             }
 
@@ -81,16 +98,31 @@ public class Right : MonoBehaviour
         {
             rb.useGravity = true;
         }
-        if (coll.gameObject.tag == "Ground")
+
+        if (ischange == true)
         {
-            Destroy(targetObj);
+            if (coll.gameObject.tag == "Ground")
+            {
+                ischange = false;
+                Destroy(targetObj);
+            }
         }
 
 
     }
 
-    
-       
-   
+    public bool GetStatus()
+    {
+        return liftstatus;
+    }
+
+    public void SetStatus(bool status)
+    {
+        liftstatus = status;
+    }
+
+
+
+
 
 }
