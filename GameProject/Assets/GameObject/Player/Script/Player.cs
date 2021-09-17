@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
     private Vector3 PlayerPos;
 
     GameObject player;
-    Right script;
-
+    //Right script;
+    LightMoveScript script;
 
 
     Vector3 movingDirecion = Vector3.zero;
@@ -31,7 +31,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("moc_player");
-        script = player.GetComponent<Right>();
+        //script = player.GetComponent<Right>();
+        script = player.GetComponent<LightMoveScript>();
+
 
         //PlayerPos = GetComponent<Transform>().position;
         rigidbody_ = GetComponent<Rigidbody>();
@@ -51,22 +53,22 @@ public class Player : MonoBehaviour
             x = Input.GetAxis("Horizontal") * move_speed;
 
 
- if (Input.GetKey(KeyCode.RightArrow))
-        {
-            change = false;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            change = false;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            change = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            change = true;
-        }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                change = false;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                change = false;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                change = true;
+                }
+            if (Input.GetKey(KeyCode.A))
+            {
+                change = true;
+            }
 
 
 

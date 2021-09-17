@@ -9,9 +9,20 @@ public class Jump : MonoBehaviour
     private bool Grounded = true;
     public float Jumppower = 300;
 
+    GameObject light_;
+    LightMoveScript lightScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        //-----------------------------------------------
+        //現在mocなのでオブジェクト名がmoc_playerになっています
+        //本実装するときは{ Find("本実装するときのPlayerのオブジェクト名") } にしましょう。
+
+        light_ = GameObject.Find("moc_player");
+        //------------------------------------------------
+        lightScript = light_.GetComponent<LightMoveScript>();
+
         rd = GetComponent<Rigidbody>();
     }
 
@@ -20,11 +31,15 @@ public class Jump : MonoBehaviour
     {
         if (Grounded == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if(lightScript.liftStatus == false)
             {
-                Grounded = false;
-                rd.AddForce(Vector3.up * Jumppower);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Grounded = false;
+                    rd.AddForce(Vector3.up * Jumppower);
+                }
             }
+
         }
     }
 
