@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Goal_Script : MonoBehaviour
 {
+    GameObject stage;
+    stage_test_script StageScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        stage = GameObject.Find("stageReturn");
+        StageScript = stage.GetComponent<stage_test_script>();
     }
 
     // Update is called once per frame
@@ -19,7 +23,7 @@ public class Goal_Script : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && StageScript.isLight_Flg == false)
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name, UnloadSceneOptions.None);
 

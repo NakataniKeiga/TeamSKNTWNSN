@@ -30,7 +30,6 @@ public class Right : MonoBehaviour
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
 
-
         rb = GetComponent<Rigidbody>();
 
     }
@@ -44,6 +43,8 @@ public class Right : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
+
+                    Debug.Log("ƒVƒtƒg‚¨‚µ‚½");
                     liftstatus = true;
                     ischange = true;
 
