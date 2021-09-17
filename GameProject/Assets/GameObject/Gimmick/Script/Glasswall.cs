@@ -6,13 +6,21 @@ public class Glasswall : MonoBehaviour
 {
     GameObject playerobject;
     Player playermove;
+
+    GameObject stage;
+    stage_test_script StageScript;
+
     GameObject glasswall;
+
     int player_layer;
     int glasswall_layer;
 
     // Start is called before the first frame update
     void Start()
     {
+        stage = GameObject.Find("stageReturn");
+        StageScript = stage.GetComponent<stage_test_script>();
+
         playerobject = GameObject.Find("moc_player");
         playermove = playerobject.GetComponent<Player>();
         glasswall = GameObject.Find("GlassWall");
@@ -23,13 +31,15 @@ public class Glasswall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (playermove.light)
-        //{
-        //    Physics.IgnoreLayerCollision(player_layer, glasswall_layer);
-        //}
-        //else if (playermove.light == false)
-        //{
-        //    Physics.IgnoreLayerCollision(player_layer, glasswall_layer, false);
-        //}
+        if (StageScript.isLight_Flg)
+        {
+            //Debug.Log("ÉKÉâÉXè¡Ç∑");
+            Physics.IgnoreLayerCollision(player_layer, glasswall_layer);
+        }
+        else if (StageScript.isLight_Flg == false)
+        {
+            //Debug.Log("ÉKÉâÉXÇ¬ÇØÇÈ");
+            Physics.IgnoreLayerCollision(player_layer, glasswall_layer, false);
+        }
     }
 }

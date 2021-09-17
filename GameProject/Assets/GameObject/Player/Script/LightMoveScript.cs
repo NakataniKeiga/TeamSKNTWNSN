@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class LightMoveScript : MonoBehaviour
 {
-    private Vector3 lastVelocity;//速度ベクトル
-    private Rigidbody rb;//Rigidbody用
+    private Vector3 lastVelocity;   //速度ベクトル
+    private Rigidbody rb;           //Rigidbody用
     public float light_speed = 50;
-    public bool ischange = false;
-    public bool liftStatus = false;
+    public bool ischange = false;   //
+    public bool liftStatus = false; //
+    public bool jumpBan = false;    //ジャンプ禁止用　フラグ
 
     GameObject player;
     Player script;
+    Jump jumpScript;
 
     GameObject stage;
     stage_test_script StageScript;
@@ -26,9 +28,11 @@ public class LightMoveScript : MonoBehaviour
 
         player = GameObject.Find("moc_player");
         script = player.GetComponent<Player>();
+        jumpScript = player.GetComponent<Jump>();
 
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
+
 
         rb = GetComponent<Rigidbody>();
 
@@ -36,7 +40,7 @@ public class LightMoveScript : MonoBehaviour
 
     void Update()
     {
-        if (StageScript.isLight_Flg == true)
+        if (StageScript.isLight_Flg == true && jumpScript.Grounded == true)
         {
             if (ischange == false)
             {
@@ -47,7 +51,7 @@ public class LightMoveScript : MonoBehaviour
                     Debug.Log("シフトおした");
                     liftStatus = true;
                     ischange = true;
-
+                    jumpBan = true;
 
                 }
             }
@@ -63,11 +67,8 @@ public class LightMoveScript : MonoBehaviour
             if (liftStatus == true)
             {
                 rb.useGravity = false;
-                
-                rb.AddForce(new Vector3(-light_speed, 0, 0));
-
-
                 liftStatus = false;
+                rb.AddForce(new Vector3(-light_speed, 0, 0));
             }
         }
         else
@@ -77,12 +78,8 @@ public class LightMoveScript : MonoBehaviour
                 if (liftStatus == true)
                 {
                     rb.useGravity = false;
-                    
-                    rb.AddForce(new Vector3(light_speed, 0, 0));
-
                     liftStatus = false;
-                    
-
+                    rb.AddForce(new Vector3(light_speed, 0, 0));
                 }
             }
 
@@ -103,6 +100,8 @@ public class LightMoveScript : MonoBehaviour
         else
         {
             rb.useGravity = true;
+            jumpBan = false;
+
         }
 
         if (ischange == true)

@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 6497512416234244073}
   - component: {fileID: 5002771702579227412}
   - component: {fileID: 1402091312215008849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: moc_player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80c26f41ef3a7d4abbce9b385a2c9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grounded: 1
   Jumppower: 300
 --- !u!114 &5002771702579227412
 MonoBehaviour:
@@ -576,7 +577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light_speed: 400
   ischange: 0
-  liftstatus: 0
+  liftStatus: 0
+  jumpBan: 0
   targetObj: {fileID: 0}
 --- !u!1 &5595301407139897344
 GameObject:

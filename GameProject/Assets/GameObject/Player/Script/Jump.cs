@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour
 {
     private Rigidbody rd;
 
-    private bool Grounded = true;
+    public bool Grounded = true;
     public float Jumppower = 300;
 
     GameObject light_;
@@ -31,7 +31,7 @@ public class Jump : MonoBehaviour
     {
         if (Grounded == true)
         {
-            if(lightScript.liftStatus == false)
+            if(lightScript.jumpBan == false)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
