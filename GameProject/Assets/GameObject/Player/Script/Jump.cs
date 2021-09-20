@@ -45,7 +45,7 @@ public class Jump : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Move_Block")
         {
             Grounded = true;
             Debug.Log("“–‚½‚Á‚½");

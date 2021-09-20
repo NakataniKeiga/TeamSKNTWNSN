@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Mirror
+  - Move_Block
   layers:
   - Default
   - TransparentFX

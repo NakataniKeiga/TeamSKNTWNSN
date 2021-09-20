@@ -92,6 +92,11 @@ public class Player : MonoBehaviour
             transform.Translate(Vector3.forward * move_speed * Time.deltaTime);
         }
 
+
+        if(this.transform.position.y < -10)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, 5, this.transform.position.z);
+        }
     }
 
 
@@ -102,8 +107,21 @@ public class Player : MonoBehaviour
 
             Debug.Log("“–‚½‚Á‚½");
         }
-    }
+        if (transform.parent == null && collision.gameObject.tag == "Move_Block")
+        {
 
+            var block = new GameObject();
+            block.transform.parent = collision.gameObject.transform;
+            transform.parent = block.transform;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (transform.parent != null && collision.gameObject.tag == "Move_Block")
+        {
+            transform.parent = null;
+        }
+    }
     public float GetSpeed()
     {
         return move_speed;

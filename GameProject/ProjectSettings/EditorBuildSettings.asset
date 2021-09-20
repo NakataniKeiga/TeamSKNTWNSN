@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayScene.unity
     guid: 320d40eb2c345b64080e31d219854ca9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TitleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Moc/MocScene.unity
     guid: d933db51f821ac14999a2e726aced01b
   - enabled: 1
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Moc/MocStage2.unity
     guid: 61e038cae483f7941a73afbd32c300d0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Moc/MocStage3.unity
     guid: c890ada52da510e4ea12af36b55b1ef5
   m_configObjects: {}

@@ -7,10 +7,12 @@ public class Mirror_script : MonoBehaviour
 
     private Vector3 Start_Rot;
     private bool Hit_flg;
+    private bool Light_flg;
     public float ADD_ROT_X = 0.00f;
     public float ADD_ROT_Y = 0.02f;
     public float ADD_ROT_Z = 0.00f;
-
+    GameObject stage;
+    stage_test_script script;
     public enum ROTATE_TAG
     {
         UP,
@@ -23,27 +25,34 @@ public class Mirror_script : MonoBehaviour
     {
         Start_Rot = transform.localEulerAngles;
         Hit_flg = false;
+        Light_flg = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        stage = GameObject.Find("stageReturn");
+        script = stage.GetComponent<stage_test_script>();
+        Light_flg = script.isLight_Flg;
         if (Hit_flg == true)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (!Light_flg)
             {
-                Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
-                MirrorRotate(ROTATE_TAG.UP);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
-                MirrorRotate(ROTATE_TAG.DOWN);
-            }
-            else if (Input.GetKey(KeyCode.R))
-            {
-                Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
-                transform.localEulerAngles = Start_Rot;
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
+                    MirrorRotate(ROTATE_TAG.UP);
+                }
+                else if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
+                    MirrorRotate(ROTATE_TAG.DOWN);
+                }
+                else if (Input.GetKey(KeyCode.R))
+                {
+                    Debug.Log("ŠÖ”‚ğŒÄ‚Ñ‚Ü‚·");
+                    transform.localEulerAngles = Start_Rot;
+                }
             }
         }
 
