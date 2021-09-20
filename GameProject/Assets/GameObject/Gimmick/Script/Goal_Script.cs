@@ -34,14 +34,20 @@ public class Goal_Script : MonoBehaviour
             }
             else if(SceneManager.GetActiveScene().name == "MocStage2")
             {
-                SceneManager.LoadScene("MocStage3", LoadSceneMode.Single);
-                Debug.Log("ステージ3へ");
+                //SceneManager.LoadScene("MocStage3", LoadSceneMode.Single);
+                //Debug.Log("ステージ3へ");
+
+                SceneManager.LoadScene("MocStage1", LoadSceneMode.Single);
+                Debug.Log("ステージ1へ");
+
             }
-            else if(SceneManager.GetActiveScene().name == "MocStage3")
-            {
-                SceneManager.LoadScene("ClearScene",LoadSceneMode.Single);
-                Debug.Log("Clearへ");
-            }
+            //else if(SceneManager.GetActiveScene().name == "MocStage3")
+            //{
+            //    //SceneManager.LoadScene("ClearScene",LoadSceneMode.Single);
+            //    SceneManager.LoadScene("MocStage1", LoadSceneMode.Single);
+
+            //    Debug.Log("Clearへ");
+            //}
         }
     }
 }

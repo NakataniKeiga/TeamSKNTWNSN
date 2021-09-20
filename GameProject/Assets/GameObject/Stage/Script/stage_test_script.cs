@@ -11,6 +11,7 @@ public class stage_test_script : MonoBehaviour
     public bool isLight_Flg;
     public float count;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,9 @@ public class stage_test_script : MonoBehaviour
 
         count = 0;
         isLight_Flg = false;
+
+
+
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class stage_test_script : MonoBehaviour
         }
         else
         {
+
             if(Input.GetKeyDown(KeyCode.Return))
             {
                 transform.Rotate(new Vector3(x, y, z));
@@ -48,6 +53,10 @@ public class stage_test_script : MonoBehaviour
 
                 count = 3;
             }
+            
+
+            
+
         }
 
 

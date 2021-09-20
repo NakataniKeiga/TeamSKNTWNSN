@@ -42,7 +42,12 @@ public class WatchTower : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                GameObject Target = GameObject.Find("Player");
+
+                //GameObject Target = GameObject.Find("Player");
+
+                Debug.Log("ŠÄŽ‹“ƒ");
+                GameObject Target = GameObject.Find("moc_payer");
+
 
                 var diff = Target.transform.position - transform.position;
                 var distance = diff.magnitude;
