@@ -3,86 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //追加したやつ↓
-using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class WatchTower : MonoBehaviour
 {
-    public class SlimeController : MonoBehaviour
+    [SerializeField]
+    private WatchTower onlyForwardSearchEnemy;
+    [SerializeField]
+    private SphereCollider searchArea;
+    [SerializeField]
+    private float searchAngle = 0f;
+
+    private void OnTriggerStay(Collider other)
     {
-        //public Transform target;
-        private NavMeshAgent agent;
-        //public float speed = 0.01f;
-        public GameObject damageeffect;
-        private RaycastHit hit;
-        //Vector3 SlimePos;
-        //Rigidbody rigid;
-
-        void Start()
+        if (other.tag == "Player")
         {
-            // SlimePos = transform.position;
-            // rigid = GetComponent<Rigidbody>();
-            agent = GetComponent<NavMeshAgent>();
-        }
-
-        void Update()
-        {
-
-            // transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
-
-            //  transform.position += transform.forward * this.speed;
-
-
-            // rigid.MovePosition(transform.position + transform.forward * Time.deltaTime);
-            // transform.rotation = Quaternion.LookRotation(transform.position - SlimePos);
-
-            //  SlimePos = transform.position;
-            //transform.rotation = Quaternion.LookRotation(new Vector3(0, 90, 0));
-        }
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.CompareTag("Player"))
+            //　主人公の方向
+            var playerDirection = other.transform.position - transform.position;
+            //　敵の前方からの主人公の方向
+            var angle = Vector3.Angle(transform.forward, playerDirection);
+            //　サーチする角度内だったら発見
+            if (angle <= searchAngle)
             {
-
-                //GameObject Target = GameObject.Find("Player");
-
-                Debug.Log("監視塔");
-                GameObject Target = GameObject.Find("moc_payer");
-
-
-                var diff = Target.transform.position - transform.position;
-                var distance = diff.magnitude;
-                var direction = diff.normalized;
-
-                if (Physics.Raycast(transform.position, direction, out hit, distance))
-                {
-                    if (hit.transform.gameObject == Target)
-                    {
-                        agent.isStopped = false;
-                        agent.destination = Target.transform.position;
-                    }
-                    else
-                    {
-                        agent.isStopped = true;
-                    }
-
-                }
-
-            }
-        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-
-                foreach (ContactPoint point in other.contacts)
-                {
-                    GameObject effect = Instantiate(damageeffect) as GameObject;
-                    effect.transform.position = (Vector3)point.point;
-
-                }
-
+                Debug.Log("主人公発見: " + angle);
+                //onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Chase, other.transform);
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //if (other.tag == "Player")
+        //{
+        //    onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Wait);
+        //}
+    }
+
+    //　サーチする角度表示
+    private void OnDrawGizmos()
+    {
+        Handles.color = Color.red;
+        Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, searchArea.radius);
+    }
+
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    //接触したオブジェクトのタグが"Player"のとき
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        SceneManager.LoadScene("TitleScene");
+    //    }
+    //}
 }
