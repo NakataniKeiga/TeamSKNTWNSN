@@ -593,6 +593,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1272419505082571550, guid: 9c49aa1a01829fd4abee2373a65e45af, type: 3}
+      propertyPath: delay_
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1340295484237519667, guid: 9c49aa1a01829fd4abee2373a65e45af, type: 3}
       propertyPath: m_Name
       value: BGM
