@@ -1977,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.09349295
       objectReference: {fileID: 0}
+    - target: {fileID: 1402091312215008849, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
+      propertyPath: light_speed
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 2500595171622887943, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
       propertyPath: move_speed
       value: 10
@@ -2610,6 +2614,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba145fcb92032f4e9d83cd08648a1a4, type: 3}
+--- !u!1 &1150105785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5247450811030644314, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
+  m_PrefabInstance: {fileID: 817263094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150105786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150105785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccc0b326ee3fd447bd06a94b5b64440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingPoint: {fileID: 1544225994}
+  bullet: {fileID: 6556283112633985711, guid: 5238491f7bde55a44ae8d95ca0b6ad69, type: 3}
+  speed: 60
+  destroyboll: 5
+  targetObj: {fileID: 6556283112633985711, guid: 5238491f7bde55a44ae8d95ca0b6ad69, type: 3}
 --- !u!1 &1155957663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4085435278426137831, guid: 1ba145fcb92032f4e9d83cd08648a1a4, type: 3}
@@ -3600,6 +3626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba145fcb92032f4e9d83cd08648a1a4, type: 3}
+--- !u!1 &1544225994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4379094103754496795, guid: 3ad73073e10f4c44189003da5cb52bd0, type: 3}
+  m_PrefabInstance: {fileID: 817263094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600194652
 GameObject:
   m_ObjectHideFlags: 0

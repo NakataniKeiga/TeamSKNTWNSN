@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
         cameraPos = this.gameObject.transform.position;
         cameraPos.y += 5f;
-        cameraPos.z += -20f;
+        cameraPos.z += -30f;
         maincamera.transform.position = cameraPos;
        
 
