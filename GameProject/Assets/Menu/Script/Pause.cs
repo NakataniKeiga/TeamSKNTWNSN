@@ -28,10 +28,16 @@ public class Pause : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        //Hシーンで「タイトルシーンに遷移」
+        //Hキーで「タイトルシーンに遷移」
         if(Input.GetKey(KeyCode.H))
         {
             SceneManager.LoadScene("TitleScene");
+        }
+
+        //Rキーで「ステージリセット」
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
