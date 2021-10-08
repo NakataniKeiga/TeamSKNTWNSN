@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private Rigidbody rigidbody_;
     private Animator animator_;
     private Vector3 PlayerPos;
+    private bool isTP_1 = false;
+    private bool isTP_2 = false;
 
     GameObject player;
     //Right script;
@@ -97,6 +99,17 @@ public class Player : MonoBehaviour
         {
             this.transform.position = new Vector3(this.transform.position.x, 5, this.transform.position.z);
         }
+
+        if (isTP_1 == true)
+        {
+            transform.position = new Vector3(60,25, 0);
+            isTP_1 = false;
+        }
+        if (isTP_2 == true)
+        {
+            transform.position = new Vector3(-92.5f,48.5f, 0);
+            isTP_2 = false;
+        }
     }
 
 
@@ -113,6 +126,14 @@ public class Player : MonoBehaviour
             var block = new GameObject();
             block.transform.parent = collision.gameObject.transform;
             transform.parent = block.transform;
+        }
+        if (collision.gameObject.tag == "warp1")
+        {
+            isTP_1 = true;
+        }
+        if (collision.gameObject.tag == "warp2")
+        {
+            isTP_2 = true;
         }
     }
     private void OnCollisionExit(Collision collision)
