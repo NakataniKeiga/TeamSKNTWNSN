@@ -18,7 +18,7 @@ public class TitleScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             // ƒV[ƒ“Ø‚è‘Ö‚¦‚ÉLoadSceneŠÖ”‚ğg‚¤
-            SceneManager.LoadScene("PlayScene");
+            SceneManager.LoadScene("MocStage4");
         }
     }
 }
