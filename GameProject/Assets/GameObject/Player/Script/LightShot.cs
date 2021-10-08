@@ -36,7 +36,7 @@ public class LightShot : MonoBehaviour
     void Update()
     {
 
-        if (StageScript.isLight_Flg == true)
+        if (StageScript.isLight_Flg == false)
         {
             // スペースキーが押されたかを判定
             if (Input.GetKeyDown(KeyCode.LeftControl))
