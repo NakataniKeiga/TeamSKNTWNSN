@@ -32,20 +32,22 @@ public class WatchTower : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        //if (other.tag == "Player")
-        //{
-        //    onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Wait);
-        //}
-    }
-
+#if UNITY_EDITOR
     //　サーチする角度表示
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         Handles.color = Color.red;
         Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, searchArea.radius);
     }
+#endif
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Wait);
+    //    }
+    //}
 
     //void OnTriggerEnter(Collider other)
     //{

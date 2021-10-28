@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Mirror
   - Move_Block
+  - warp1
+  - warp2
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Light
   - player_layer
   - glasswall_layer
   - 

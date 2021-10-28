@@ -48,6 +48,11 @@ public class Goal_Script : MonoBehaviour
 
             //    Debug.Log("Clear‚Ö");
             //}
+            else if (SceneManager.GetActiveScene().name == "MocStage4")
+            {
+                Debug.Log("Clear‚Ö");
+                SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
+            }
         }
     }
 }
