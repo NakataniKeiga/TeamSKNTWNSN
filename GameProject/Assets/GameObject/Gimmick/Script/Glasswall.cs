@@ -21,7 +21,7 @@ public class Glasswall : MonoBehaviour
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
 
-        playerobject = GameObject.Find("moc_player");
+        playerobject = GameObject.Find("player");
         playermove = playerobject.GetComponent<Player>();
         glasswall = GameObject.Find("GlassWall");
         player_layer = LayerMask.NameToLayer("player_layer");
