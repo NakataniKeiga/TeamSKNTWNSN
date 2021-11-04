@@ -15,8 +15,8 @@ public class Mirror_script : MonoBehaviour
     stage_test_script script;
     public enum ROTATE_TAG
     {
-        UP,
-        DOWN,
+        RIGHT,
+        LEFT,
     }
 
 
@@ -38,15 +38,15 @@ public class Mirror_script : MonoBehaviour
         {
             if (!Light_flg)
             {
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (Input.GetKey(KeyCode.UpArrow) || Input.GetButton("MirrorRot_R"))
                 {
                     Debug.Log("ä÷êîÇåƒÇ—Ç‹Ç∑");
-                    MirrorRotate(ROTATE_TAG.UP);
+                    MirrorRotate(ROTATE_TAG.RIGHT);
                 }
-                else if (Input.GetKey(KeyCode.DownArrow))
+                else if (Input.GetKey(KeyCode.DownArrow) || Input.GetButton("MirrorRot_L"))
                 {
                     Debug.Log("ä÷êîÇåƒÇ—Ç‹Ç∑");
-                    MirrorRotate(ROTATE_TAG.DOWN);
+                    MirrorRotate(ROTATE_TAG.LEFT);
                 }
                 else if (Input.GetKey(KeyCode.R))
                 {
@@ -60,12 +60,12 @@ public class Mirror_script : MonoBehaviour
 
     void MirrorRotate(ROTATE_TAG tag)
     {
-        if (tag == ROTATE_TAG.UP)
+        if (tag == ROTATE_TAG.RIGHT)
         {
             transform.Rotate(new Vector3(ADD_ROT_X, ADD_ROT_Y, ADD_ROT_Z));
             Debug.Log("è„Ç…å¸ÇØÇ‹Ç∑");
         }
-        else if (tag == ROTATE_TAG.DOWN)
+        else if (tag == ROTATE_TAG.LEFT)
         {
             transform.Rotate(new Vector3((-1 * ADD_ROT_X), (-1 * ADD_ROT_Y), (-1 * ADD_ROT_Z)));
             Debug.Log("â∫Ç…å¸ÇØÇ‹Ç∑");

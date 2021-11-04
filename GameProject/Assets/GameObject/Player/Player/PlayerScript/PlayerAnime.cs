@@ -251,7 +251,7 @@ public class PlayerAnime : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.LeftShift))
 			{
 				m_Animator.SetBool("OnGround", m_IsGrounded);
-				Debug.Log("シフトとおもうやん");
+				Debug.Log("シフトとおもうやん");//しばくぞ
 			}
 
 		}

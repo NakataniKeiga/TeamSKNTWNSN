@@ -30,7 +30,7 @@ public class BG_script : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("stage_return"))
             {
 
 

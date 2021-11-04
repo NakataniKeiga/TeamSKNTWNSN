@@ -30,7 +30,7 @@ public class sky : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("stage_return"))
             {
                 if (sky_flg == false)
                 {

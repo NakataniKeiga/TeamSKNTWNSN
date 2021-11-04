@@ -49,7 +49,7 @@ public class Right : MonoBehaviour
     {
         if (StageScript.isLight_Flg == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Light"))
             {
                 Debug.Log("ƒVƒtƒg‚¨‚µ‚½");
                 Lightstatus = true;

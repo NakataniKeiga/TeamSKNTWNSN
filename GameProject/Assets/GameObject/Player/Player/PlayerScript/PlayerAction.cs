@@ -11,6 +11,7 @@ public class PlayerAction : MonoBehaviour
     private Vector3 m_Move;
     private bool m_Jump;
     public bool change = true;
+    private Vector3 start_pos;
     GameObject maincamera;
     Vector3 cameraPos;
 
@@ -21,14 +22,29 @@ public class PlayerAction : MonoBehaviour
         m_Anime = GetComponent<PlayerAnime>();
 
         maincamera = GameObject.Find("Main Camera");
+        start_pos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(start_pos.z != transform.position.z)
+        {
+            Vector3 result;
+
+            result.x = transform.position.x;
+            result.y = transform.position.y;
+            result.z = start_pos.z;
+
+            transform.position = result;
+
+        }
+
         if (!m_Jump)
         {
             m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump_joy");
         }
 
         cameraPos = this.gameObject.transform.position;
@@ -52,11 +68,29 @@ public class PlayerAction : MonoBehaviour
         {
             change = true;
         }
+
+        if (Input.GetAxis("joystick_L") > 0)
+        {
+            change = false;
+        }
+        else if (Input.GetAxis("joystick_L") < 0)
+        {
+            change = true;
+        }
     }
 
     private void FixedUpdate()
     {
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
+        float h;
+
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            h = CrossPlatformInputManager.GetAxis("Horizontal");
+        }
+        else
+        {
+            h = CrossPlatformInputManager.GetAxis("joystick_L");
+        }
        
         bool crouch = Input.GetKey(KeyCode.C);
 

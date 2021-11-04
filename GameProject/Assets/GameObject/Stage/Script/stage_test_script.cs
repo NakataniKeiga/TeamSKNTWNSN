@@ -35,7 +35,7 @@ public class stage_test_script : MonoBehaviour
         else
         {
 
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("stage_return"))
             {
                 transform.Rotate(new Vector3(x, y, z));
 

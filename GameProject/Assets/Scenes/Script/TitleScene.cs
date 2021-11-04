@@ -63,7 +63,7 @@ public class TitleScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)){
 
             /// シーン移動
-            SceneManager.LoadScene("Play");
+            SceneManager.LoadScene("MocStage4");
         }
 
         //// エンターキーでPlayシーンへ(今は仮で)
