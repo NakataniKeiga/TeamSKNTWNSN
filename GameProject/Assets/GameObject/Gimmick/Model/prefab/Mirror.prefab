@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2203307360729598023}
   m_Layer: 0
   m_Name: MirrorReflection
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 2203307360729609387}
   m_Layer: 0
   m_Name: MirrorFrame
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
