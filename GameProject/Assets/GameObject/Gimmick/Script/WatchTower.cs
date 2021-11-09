@@ -27,7 +27,9 @@ public class WatchTower : MonoBehaviour
             if (angle <= searchAngle)
             {
                 Debug.Log("ŽålŒö”­Œ©: " + angle);
-                //onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Chase, other.transform);
+
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             }
         }
     }
