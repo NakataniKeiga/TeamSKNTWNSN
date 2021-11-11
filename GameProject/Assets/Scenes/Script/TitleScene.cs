@@ -60,7 +60,8 @@ public class TitleScene : MonoBehaviour
         }
 
         /// 移動する準備(仮エンター押されたら移動)
-        if (Input.GetKeyDown(KeyCode.Return)){
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action_joy"))
+        {
 
             /// シーン移動
             SceneManager.LoadScene("MocStage4");
