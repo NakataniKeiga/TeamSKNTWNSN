@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 31655961}
   - component: {fileID: 31655960}
+  - component: {fileID: 31655963}
+  - component: {fileID: 31655962}
   m_Layer: 0
   m_Name: StartButton
   m_TagString: Untagged
@@ -180,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 649223268058989734, guid: bdb858bdef94e9c49a02482495335a0a, type: 3}
+  m_Sprite: {fileID: 6026119411933494758, guid: a9a8a7bddbd771d4fabaab9a24c60fe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,6 +207,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31655962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31655959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d61908c1f0ffd43be101a29b676915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &31655963
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31655959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 804163a3a0ade694b9ad31514a3e2cae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &455322803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,7 +731,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8467241744927558709, guid: bdb858bdef94e9c49a02482495335a0a, type: 3}
+  m_Sprite: {fileID: 4349412493025794648, guid: a9a8a7bddbd771d4fabaab9a24c60fe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -898,6 +931,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1876770404}
   - component: {fileID: 1876770403}
+  - component: {fileID: 1876770405}
+  - component: {fileID: 1876770406}
   m_Layer: 0
   m_Name: OptionButton
   m_TagString: Untagged
@@ -945,7 +980,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9000188618666376746, guid: bdb858bdef94e9c49a02482495335a0a, type: 3}
+  m_Sprite: {fileID: -6595823029762398511, guid: a9a8a7bddbd771d4fabaab9a24c60fe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -970,6 +1005,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1876770405
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876770402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 715ae2c481625714d9e6374f0fb67ea0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1876770406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876770402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edc11f71c8509e4ab7a01e942259b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923665143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5409272272000165699, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
