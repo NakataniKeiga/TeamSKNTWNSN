@@ -55,18 +55,22 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             change = false;
+            Debug.Log("‰E");
         }
         if (Input.GetKey(KeyCode.D))
         {
             change = false;
+            Debug.Log("‰E");
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             change = true;
+            Debug.Log("¶");
         }
         if (Input.GetKey(KeyCode.A))
         {
             change = true;
+            Debug.Log("¶");
         }
 
         if (Input.GetAxis("joystick_L") > 0)
@@ -92,7 +96,7 @@ public class PlayerAction : MonoBehaviour
             h = CrossPlatformInputManager.GetAxis("joystick_L");
         }
        
-        bool crouch = Input.GetKey(KeyCode.C);
+        bool crouch = Input.GetKey(KeyCode.LeftShift);
 
         m_Move = h * Vector3.right;
 
