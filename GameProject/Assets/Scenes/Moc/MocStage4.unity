@@ -14485,6 +14485,10 @@ PrefabInstance:
       propertyPath: move_mirror
       value: 
       objectReference: {fileID: 1252484808}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: Move_mirror.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8175184357994110218, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
       propertyPath: m_Name
       value: switch
