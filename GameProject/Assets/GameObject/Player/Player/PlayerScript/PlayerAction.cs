@@ -92,7 +92,7 @@ public class PlayerAction : MonoBehaviour
             h = CrossPlatformInputManager.GetAxis("joystick_L");
         }
        
-        bool crouch = Input.GetKey(KeyCode.C);
+        bool crouch = Input.GetKey(KeyCode.LeftShift);
 
         m_Move = h * Vector3.right;
 
