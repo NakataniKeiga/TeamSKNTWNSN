@@ -14,33 +14,45 @@ public class Inversion_Object : MonoBehaviour
     //反転するオブジェクトの座標保存用
     private Vector3 save_Coordinate;
     private float save_x, save_y, save_z;
+    private float count;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Reverse_object = GameObject.Find("reverse_obj");
+        count = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("stage_return"))
+        if (count > 0)
         {
-            //座標を持ってくる
-            save_Coordinate = this.transform.position;
+            count -= 1 * Time.deltaTime;
+            Debug.Log("１つ減らした");
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("stage_return"))
+            {
+                //座標を持ってくる
+                save_Coordinate = this.transform.position;
 
-            save_x = save_Coordinate.x;
+                save_x = save_Coordinate.x;
 
-            //マイナスを掛けて「＋/-」を切り替えて反転させる。
-            //空のオブジェクトは基本的に座標「0,0,0」
-            save_x = save_x * Reverse_namber;
+                //マイナスを掛けて「＋/-」を切り替えて反転させる。
+                //空のオブジェクトは基本的に座標「0,0,0」
+                save_x = save_x * Reverse_namber;
 
-            save_Coordinate.x = save_x;
+                save_Coordinate.x = save_x;
 
-            this.transform.position = save_Coordinate;
+                this.transform.position = save_Coordinate;
 
-
+                //クールタイム設定
+                count = 3;
+            }
         }
     }
 }
