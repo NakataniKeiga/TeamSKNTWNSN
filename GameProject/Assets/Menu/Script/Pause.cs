@@ -10,17 +10,20 @@ public class Pause : MonoBehaviour
     private GameObject MiniMap;
     private GameObject Menu2D;
     private GameObject Option2D;
+    private GameObject MenuBack2D;
 
     // Start is called before the first frame update
     void Start()
     {
         MiniMap = GameObject.Find("MiniMap_Canvas");
-        Menu2D = GameObject.Find("Menu_testCanvas");
-        Option2D = GameObject.Find("Option_testCanvas");
+        Menu2D = GameObject.Find("Menu_Canvas");
+        Option2D = GameObject.Find("Option_Canvas");
+        MenuBack2D = GameObject.Find("Menu_BackCanvas");
 
         //UIを非表示に
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(false);
+        MenuBack2D.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class Pause : MonoBehaviour
 
             //メニュー画面表示
             Menu2D.gameObject.SetActive(true);
+            MenuBack2D.gameObject.SetActive(true);
             //Option2D.gameObject.SetActive(true);
         }
 
@@ -44,6 +48,7 @@ public class Pause : MonoBehaviour
             //メニュー画面削除
             Menu2D.gameObject.SetActive(false);
             Option2D.gameObject.SetActive(false);
+            MenuBack2D.gameObject.SetActive(false);
         }
 
         //Hキーで「タイトルシーンに遷移」
