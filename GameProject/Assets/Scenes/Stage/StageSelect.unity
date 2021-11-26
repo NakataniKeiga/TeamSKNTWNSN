@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5409272272000165699, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6528025343476039366, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1256,6 +1260,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
+--- !u!1 &566725492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1451343612572638, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+  m_PrefabInstance: {fileID: 777086047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &566725497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566725492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fd9a94242b83f43bfe26e99e592a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door_Number: 4
 --- !u!1001 &579951664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1556,6 +1578,26 @@ PrefabInstance:
     - target: {fileID: 4718715948799430, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65687739679008184, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7783561
+      objectReference: {fileID: 0}
+    - target: {fileID: 65687739679008184, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1140186
+      objectReference: {fileID: 0}
+    - target: {fileID: 65687739679008184, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+      propertyPath: m_Center.x
+      value: -0.64182925
+      objectReference: {fileID: 0}
+    - target: {fileID: 65687739679008184, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+      propertyPath: m_Center.z
+      value: 0.28005034
+      objectReference: {fileID: 0}
+    - target: {fileID: 65687739679008184, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}

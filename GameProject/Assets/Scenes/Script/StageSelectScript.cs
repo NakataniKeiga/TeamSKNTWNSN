@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
 public class StageSelectScript : MonoBehaviour
 {
 
-    public int Stage_Number = 0;
+    public int Door_Number = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,24 +19,43 @@ public class StageSelectScript : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetButtonDown("action_joy"))
-        {
-            Debug.Log("ボタンが押された");
-            SceneManager.LoadScene("MocStage4", LoadSceneMode.Single);
-            Debug.Log("Sceneを更新");
-        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("プレイヤーにあたった");
             if (Input.GetButtonDown("action_joy"))
             {
-                Debug.Log("ボタンが押された");
-                SceneManager.LoadScene("MocStage4", LoadSceneMode.Single);
-                Debug.Log("Sceneを更新");
+                switch (Door_Number)
+                {
+                    case 1:
+                        Debug.Log("ボタンが押された");
+                        SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
+                        Debug.Log("Sceneを更新");
+                        break;
+                    case 2:
+                        Debug.Log("ボタンが押された");
+                        SceneManager.LoadScene("Stage2", LoadSceneMode.Single);
+                        Debug.Log("Sceneを更新");
+                        break;
+                    case 3:
+                        Debug.Log("ボタンが押された");
+                        SceneManager.LoadScene("Stage3", LoadSceneMode.Single);
+                        Debug.Log("Sceneを更新");
+                        break;
+                    case 4:
+                        Debug.Log("ボタンが押された");
+                        SceneManager.LoadScene("MocStage4", LoadSceneMode.Single);
+                        Debug.Log("Sceneを更新");
+                        break;
+                    case 5:
+                        Debug.Log("ボタンが押された");
+                        SceneManager.LoadScene("Stage5", LoadSceneMode.Single);
+                        Debug.Log("Sceneを更新");
+                        break;
+                }
             }
         }
     }
