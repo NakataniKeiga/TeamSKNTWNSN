@@ -96,13 +96,13 @@ public class PlayerAction : MonoBehaviour
             h = CrossPlatformInputManager.GetAxis("joystick_L");
         }
        
-        bool crouch = Input.GetKey(KeyCode.LeftShift);
+        
 
         m_Move = h * Vector3.right;
 
-        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
+        if (Input.GetKey(KeyCode.C)) m_Move *= 0.5f;
 
-
+        bool crouch = Input.GetKey(KeyCode.C);
         m_Anime.Move(m_Move, crouch, m_Jump);
         m_Jump = false;
 

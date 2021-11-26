@@ -4,35 +4,18 @@ using UnityEngine;
 
 public class ChangePlayer : MonoBehaviour
 {
-    private int index = 0;
-    private int o_max = 1;
-
+    public bool LightStatus = false;
 
     public GameObject player;
-    public GameObject Light;
-
-    //public GameObject[] childObject;
-
-    GameObject[] CharacterList;
+    public GameObject LightCube;
 
     // Start is called before the first frame update
     void Start()
     {
+        LightCube.SetActive(false);
 
-        CharacterList = new GameObject[] { player, Light };
-        //o_max = this.transform.childCount;//子オブジェクの個数取得
-        //childObject = new GameObject[o_max];//インスタンス取得
+        
 
-        //for (int index = 0; index < o_max; index++)
-        //{
-        //    childObject[index] = transform.GetChild(index).gameObject;
-        //}
-
-        //foreach (GameObject gameObj in childObject)
-        //{
-        //    gameObj.SetActive(false);
-        //}
-        //childObject[index].SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,14 +23,29 @@ public class ChangePlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            CharacterList[index].SetActive(false);
-            index++;
+            if (LightCube.activeSelf)
+            {
+                player.SetActive(true);
+                LightCube.SetActive(false);
+                LightStatus = false;
 
+            }
 
-            if (index == o_max) { index = 0; }
+            else
+            {
+                player.SetActive(false);
+                LightCube.SetActive(true);
+                LightStatus = true;
+                LightCube.transform.position = player.transform.position;
 
-            CharacterList[index].SetActive(true);
-
+            }
         }
+
+        if (LightCube.active == false)
+        {
+            player.SetActive(true);
+        
+        }
+
     }
 }
