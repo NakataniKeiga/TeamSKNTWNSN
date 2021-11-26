@@ -73,11 +73,11 @@ public class PlayerAction : MonoBehaviour
             Debug.Log("¶");
         }
 
-        if (Input.GetAxis("joystick_L") > 0)
+        if (Input.GetAxis("joystick_L_H") > 0)
         {
             change = false;
         }
-        else if (Input.GetAxis("joystick_L") < 0)
+        else if (Input.GetAxis("joystick_L_H") < 0)
         {
             change = true;
         }
@@ -93,7 +93,7 @@ public class PlayerAction : MonoBehaviour
         }
         else
         {
-            h = CrossPlatformInputManager.GetAxis("joystick_L");
+            h = CrossPlatformInputManager.GetAxis("joystick_L_H");
         }
        
         bool crouch = Input.GetKey(KeyCode.LeftShift);
