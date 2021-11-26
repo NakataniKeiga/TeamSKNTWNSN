@@ -6,7 +6,7 @@ public class Mirror_switch : MonoBehaviour
 {
     //初代
     public GameObject move_mirror_1;
-
+    public const int MOVE_MIRROR_MAX = 4;
     public float SET_ROT_X_1 = 0.00f;
     public float SET_ROT_Y_1 = 0.00f;
     public float SET_ROT_Z_1 = 0.00f;
@@ -14,13 +14,13 @@ public class Mirror_switch : MonoBehaviour
     //鏡を指定
     public GameObject[] Move_mirror = new GameObject[4];
     //初期の座標と角度を保存
-    public Vector3[] START_POS = new Vector3[4];
-    public Vector3[] START_ROT = new Vector3[4];
+    public Vector3[] START_POS = new Vector3[MOVE_MIRROR_MAX];
+    public Vector3[] START_ROT = new Vector3[MOVE_MIRROR_MAX];
     //動かす座標と角度を指定
-    public Vector3[] SET_ROT = new Vector3[4];
-    public Vector3[] SET_POS = new Vector3[4];
+    public Vector3[] SET_ROT = new Vector3[MOVE_MIRROR_MAX];
+    public Vector3[] SET_POS = new Vector3[MOVE_MIRROR_MAX];
     //反復にするかどうか
-    public bool[] is_RETURN = new bool[4];
+    public bool[] is_RETURN = new bool[MOVE_MIRROR_MAX];
     //Unity側で触らなくていい
     public bool[] is_REVERSE = new bool[4];
 
