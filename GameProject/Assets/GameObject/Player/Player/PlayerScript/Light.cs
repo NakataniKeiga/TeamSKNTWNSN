@@ -52,35 +52,35 @@ public class Light : MonoBehaviour
 
             //}
 
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                direction = false;
-                Debug.Log("右");
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                direction = false;
-                Debug.Log("右");
-            }
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                direction = true;
-                Debug.Log("左");
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction = true;
-                Debug.Log("左");
-            }
+            //if (Input.GetKey(KeyCode.RightArrow))
+            //{
+            //    direction = false;
+            //    Debug.Log("右");
+            //}
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    direction = false;
+            //    Debug.Log("右");
+            //}
+            //if (Input.GetKey(KeyCode.LeftArrow))
+            //{
+            //    direction = true;
+            //    Debug.Log("左");
+            //}
+            //if (Input.GetKey(KeyCode.A))
+            //{
+            //    direction = true;
+            //    Debug.Log("左");
+            //}
 
-            if (Input.GetAxis("joystick_L") > 0)
-            {
-                direction = false;
-            }
-            else if (Input.GetAxis("joystick_L") < 0)
-            {
-                direction = true;
-            }
+            //if (Input.GetAxis("joystick_L") > 0)
+            //{
+            //    direction = false;
+            //}
+            //else if (Input.GetAxis("joystick_L") < 0)
+            //{
+            //    direction = true;
+            //}
 
         }
 
@@ -91,14 +91,13 @@ public class Light : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (script.LightStatus == true)
-        {
-            if (Input.GetAxis("joystick_L") > 0)
+        
+            if (Input.GetAxis("joystick_L_H") > 0)
             {
                  rb.useGravity = false;
                 rb.AddForce(new Vector3(-light_speed, 0, 0));
             }
-            else if (Input.GetAxis("joystick_L") < 0)
+            else if (Input.GetAxis("joystick_L_H") < 0)
             {
                 rb.useGravity = false;
                 rb.AddForce(new Vector3(light_speed, 0, 0));
@@ -106,7 +105,7 @@ public class Light : MonoBehaviour
             }
 
 
-        }
+        
         this.lastVelocity = this.rb.velocity;//Rigidbodyを使用した移動用
 
     }
@@ -120,11 +119,11 @@ public class Light : MonoBehaviour
             //{
                 Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
                 this.rb.velocity = refrectVec;
-            
+
         }
         else
         {
-            rb.useGravity = true;
+            //rb.useGravity = true;
         }
 
 
