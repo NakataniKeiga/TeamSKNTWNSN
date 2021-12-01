@@ -278,7 +278,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: joystick_R_H
+    m_Name: Pov_R_H
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -294,7 +294,7 @@ InputManager:
     axis: 5
     joyNum: 0
   - serializedVersion: 3
-    m_Name: joystick_R_V
+    m_Name: Pov_R_V
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

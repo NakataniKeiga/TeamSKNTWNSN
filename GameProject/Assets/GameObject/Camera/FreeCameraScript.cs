@@ -29,7 +29,7 @@ public class FreeCameraScript : MonoBehaviour
         }
         else
         {
-            h = CrossPlatformInputManager.GetAxis("joystick_R_H");
+            h = CrossPlatformInputManager.GetAxis("Pov_R_H");
         }
 
         if (Input.GetAxis("Vertical") != 0)
@@ -38,7 +38,7 @@ public class FreeCameraScript : MonoBehaviour
         }
         else
         {
-            v = CrossPlatformInputManager.GetAxis("joystick_R_V");
+            v = CrossPlatformInputManager.GetAxis("Pov_R_V");
 
         }
 
