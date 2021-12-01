@@ -11,6 +11,8 @@ public class Light : MonoBehaviour
     public bool Lightstatus = false; //ライト状態
     public bool direction = true;//向いている方向 //ture：右   //false：左
 
+    private Vector3 start_pos;
+
     GameObject light;//ライトスクリプト
     ChangePlayer script;
 
@@ -31,6 +33,7 @@ public class Light : MonoBehaviour
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
 
+        start_pos = transform.position;
 
         rb = GetComponent<Rigidbody>();
 
@@ -38,8 +41,28 @@ public class Light : MonoBehaviour
 
     void Update()
     {
+        if (start_pos.z != transform.position.z)
+        {
+            Vector3 result;
+
+            result.x = transform.position.x;
+            result.y = transform.position.y;
+            result.z = start_pos.z;
+
+            transform.position = result;
+        
+        }
+
+
         if (StageScript.isLight_Flg == true)
         {
+
+            if (targetObj.activeSelf == false)
+            {
+                rb.AddForce(new Vector3(0, 0, 0));
+            }
+
+
             //if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Light"))
             //{
             //    Debug.Log("シフトおした");
@@ -84,6 +107,8 @@ public class Light : MonoBehaviour
 
         }
 
+        
+
 
 
     }
@@ -91,20 +116,20 @@ public class Light : MonoBehaviour
     void FixedUpdate()
     {
 
-        
-            if (Input.GetAxis("joystick_L_H") > 0)
-            {
-                 rb.useGravity = false;
-                rb.AddForce(new Vector3(-light_speed, 0, 0));
-            }
-            else if (Input.GetAxis("joystick_L_H") < 0)
-            {
-                rb.useGravity = false;
-                rb.AddForce(new Vector3(light_speed, 0, 0));
 
-            }
+        if (Input.GetAxis("joystick_L_H") < 0)
+        {
+            rb.useGravity = false;
+            rb.AddForce(new Vector3(-light_speed, 0, 0));
+        }
+        else if (Input.GetAxis("joystick_L_H") > 0)
+        {
+            rb.useGravity = false;
+            rb.AddForce(new Vector3(light_speed, 0, 0));
 
+        }
 
+       
         
         this.lastVelocity = this.rb.velocity;//Rigidbodyを使用した移動用
 
@@ -123,18 +148,22 @@ public class Light : MonoBehaviour
         }
         else
         {
-            //rb.useGravity = true;
-        }
-
-
-        if (coll.gameObject.tag == "Ground")
-        {
             ischange = false;
             script.LightStatus = false;
 
             targetObj.SetActive(false);
             targetobject.transform.position = targetObj.transform.position;
         }
+
+
+        //if (coll.gameObject.tag == "Ground")
+        //{
+        //    ischange = false;
+        //    script.LightStatus = false;
+
+        //    targetObj.SetActive(false);
+        //    targetobject.transform.position = targetObj.transform.position;
+        //}
 
 
 

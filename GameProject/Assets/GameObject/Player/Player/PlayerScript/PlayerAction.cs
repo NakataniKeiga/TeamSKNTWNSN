@@ -7,6 +7,9 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerAction : MonoBehaviour
 {
+    bool Cameraflg = false;
+
+
     private PlayerAnime m_Anime;
     private Vector3 m_Move;
     private bool m_Jump;
@@ -41,45 +44,50 @@ public class PlayerAction : MonoBehaviour
 
         }
 
-        if (!m_Jump)
+        if (Cameraflg == false)
         {
-            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump_joy");
-        }
 
-        cameraPos = this.gameObject.transform.position;
-        cameraPos.y += 5f;
-        cameraPos.z += -30f;
-        maincamera.transform.position = cameraPos;
+            if (!m_Jump)
+            {
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump_joy");
+            }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            change = false;
-            Debug.Log("右");
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            change = false;
-            Debug.Log("右");
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            change = true;
-            Debug.Log("左");
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            change = true;
-            Debug.Log("左");
-        }
 
-        if (Input.GetAxis("joystick_L_H") > 0)
-        {
-            change = false;
-        }
-        else if (Input.GetAxis("joystick_L_H") < 0)
-        {
-            change = true;
+            cameraPos = this.gameObject.transform.position;
+            cameraPos.y += 5f;
+            cameraPos.z += -30f;
+            maincamera.transform.position = cameraPos;
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                change = false;
+                Debug.Log("右");
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                change = false;
+                Debug.Log("右");
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                change = true;
+                Debug.Log("左");
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                change = true;
+                Debug.Log("左");
+            }
+
+            if (Input.GetAxis("joystick_L_H") > 0)
+            {
+                change = false;
+            }
+            else if (Input.GetAxis("joystick_L_H") < 0)
+            {
+                change = true;
+            }
         }
     }
 
