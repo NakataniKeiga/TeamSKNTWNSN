@@ -65,7 +65,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             else
             {
                 v = CrossPlatformInputManager.GetAxis("joystick_L_V");
-                //v = 0.0f;
+                
             }
 
             bool crouch = Input.GetKey(KeyCode.C);

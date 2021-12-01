@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
+    path: Assets/Scenes/Title/TitleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Stage/StageSelect.unity
     guid: 8da38e06a1eab0343854805164753c59
   - enabled: 0
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/PlayScene/Play.unity
     guid: ecb88d9a227f62f4e8ecd60a60f70829
   - enabled: 0
-    path: Assets/Scenes/PlayScene.unity
+    path: Assets/Scenes/PlayScene/PlayScene.unity
     guid: 320d40eb2c345b64080e31d219854ca9
   - enabled: 0
     path: Assets/Scenes/Moc/MocScene.unity
@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Moc/MocStage4.unity
     guid: 17c1ec43d8c19bd44809de01c4ce8117
   - enabled: 1
-    path: Assets/Scenes/ResultScene.unity
+    path: Assets/Scenes/ResultScene/ResultScene.unity
     guid: 8f8f09e5a796e6046a6eb3c8805d9a24
   m_configObjects: {}
