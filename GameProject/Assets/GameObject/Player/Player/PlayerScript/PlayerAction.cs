@@ -73,11 +73,11 @@ public class PlayerAction : MonoBehaviour
             Debug.Log("¶");
         }
 
-        if (Input.GetAxis("joystick_L") > 0)
+        if (Input.GetAxis("joystick_L_H") > 0)
         {
             change = false;
         }
-        else if (Input.GetAxis("joystick_L") < 0)
+        else if (Input.GetAxis("joystick_L_H") < 0)
         {
             change = true;
         }
@@ -93,16 +93,16 @@ public class PlayerAction : MonoBehaviour
         }
         else
         {
-            h = CrossPlatformInputManager.GetAxis("joystick_L");
+            h = CrossPlatformInputManager.GetAxis("joystick_L_H");
         }
        
-        bool crouch = Input.GetKey(KeyCode.LeftShift);
+        
 
         m_Move = h * Vector3.right;
 
-        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
+        if (Input.GetKey(KeyCode.C)) m_Move *= 0.5f;
 
-
+        bool crouch = Input.GetKey(KeyCode.C);
         m_Anime.Move(m_Move, crouch, m_Jump);
         m_Jump = false;
 

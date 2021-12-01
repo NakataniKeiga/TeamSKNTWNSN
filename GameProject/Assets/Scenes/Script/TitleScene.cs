@@ -49,7 +49,7 @@ public class TitleScene : MonoBehaviour
         if(SelectFrame == 1){
 
             /// 枠をプレイに移動(今は仮でモックステージ)
-            StageManager.m_instance.m_select = "MocStage4";
+            StageManager.m_instance.m_select = "StageSelect";
         }
 
         /// オプションにあるなら
@@ -64,7 +64,7 @@ public class TitleScene : MonoBehaviour
         {
 
             /// シーン移動
-            SceneManager.LoadScene("MocStage4");
+            SceneManager.LoadScene("StageSelect");
         }
 
         //// エンターキーでPlayシーンへ(今は仮で)

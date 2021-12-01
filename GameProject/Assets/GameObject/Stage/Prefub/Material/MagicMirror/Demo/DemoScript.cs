@@ -112,26 +112,26 @@ public class DemoScript : MonoBehaviour
 
     private void MoveLightBulb()
     {
-        float x = LightBulb.transform.position.x;
-        if (x > 5)
-        {
-            moveModifier = -moveModifier;
-            x = 5;
-        }
-        else if (x < -5)
-        {
-            moveModifier = -moveModifier;
-            x = -5;
-        }
-        else
-        {
-            x += (Time.deltaTime * moveModifier);
-        }
+        //float x = LightBulb.transform.position.x;
+        //if (x > 5)
+        //{
+        //    moveModifier = -moveModifier;
+        //    x = 5;
+        //}
+        //else if (x < -5)
+        //{
+        //    moveModifier = -moveModifier;
+        //    x = -5;
+        //}
+        //else
+        //{
+        //    x += (Time.deltaTime * moveModifier);
+        //}
 
-        Light l = LightBulb.GetComponent<Light>();
-        LightBulb.transform.position = new Vector3(x, LightBulb.transform.position.y, LightBulb.transform.position.z);
-        float i = Mathf.Min(1.0f, l.intensity);
-        lightBulbMaterial.SetColor("_EmissionColor", new Color(i, i, i));
+        //Light l = LightBulb.GetComponent<Light>();
+        //LightBulb.transform.position = new Vector3(x, LightBulb.transform.position.y, LightBulb.transform.position.z);
+        //float i = Mathf.Min(1.0f, l.intensity);
+        //lightBulbMaterial.SetColor("_EmissionColor", new Color(i, i, i));
     }
 
     private void UpdateMouseLook()

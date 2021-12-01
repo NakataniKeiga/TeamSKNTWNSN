@@ -45,9 +45,29 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            float h;
+            float v;
+
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                 h = CrossPlatformInputManager.GetAxis("Horizontal");
+            }
+            else
+            {
+                 h = CrossPlatformInputManager.GetAxis("joystick_L_H");
+            }
+
+            if (Input.GetAxis("Vertical") != 0)
+            {
+                v = CrossPlatformInputManager.GetAxis("Horizontal");
+            }
+            else
+            {
+                v = CrossPlatformInputManager.GetAxis("joystick_L_V");
+                //v = 0.0f;
+            }
+
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
