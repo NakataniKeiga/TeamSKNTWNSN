@@ -14,11 +14,16 @@ public class ResultScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // エンターキーでTitleに戻る
-        if(Input.GetKeyDown(KeyCode.Return))
+        // エンターキーまたはコントローラー押したら
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action_joy"))
         {
-            // シーン切り替えにLoadScene関数を使う
-            SceneManager.LoadScene("TitleScene");
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        
+        #else
+            // ゲームを終わらせる
+            Application.Quit();
+        #endif  
         }
     }
 }
