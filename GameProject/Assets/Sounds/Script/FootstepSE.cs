@@ -15,7 +15,7 @@ public class FootstepSE : MonoBehaviour
         source = GetComponents<AudioSource>()[0];
     }
 
-    public void PlayFootsstepSE()
+    public void PlayFootstepSE()
     {
         if (randomizePitch)
             source.pitch = 1.0f + Random.Range(-pitchRange, pitchRange);

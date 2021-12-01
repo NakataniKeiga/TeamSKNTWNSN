@@ -2487,7 +2487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1299be0a7dd6ab848869a33696141177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 6c7c9c681c794644eaf1983b29f7e5a5, type: 3}
   randomizePitch: 1
   pitchRange: 0.1
 --- !u!82 &672130565
