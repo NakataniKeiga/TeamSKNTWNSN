@@ -25,13 +25,7 @@ public class FreeCamera : MonoBehaviour
         }
         else
         {
-            h = CrossPlatformInputManager.GetAxis("pov_L_H");
-
-            move_pos.x = transform.position.x;
-            move_pos.y = h * transform.position.y;
-            move_pos.z = transform.position.z;
-
-            transform.position = move_pos;
+            h = CrossPlatformInputManager.GetAxis("pov_H");
         }
 
         if (Input.GetAxis("Vertical") != 0)
@@ -41,15 +35,13 @@ public class FreeCamera : MonoBehaviour
         }
         else
         {
-            v = CrossPlatformInputManager.GetAxis("pov_L_V");
-
-            move_pos.x = v * transform.position.x;
-            move_pos.y = transform.position.y;
-            move_pos.z = transform.position.z;
-
-            transform.position = move_pos;
+            v = CrossPlatformInputManager.GetAxis("pov_V");
         }
 
+        move_pos = v * Vector3.forward + h * Vector3.right;
 
+        move_pos.y = move_pos.z;
+        move_pos.z = 0.0f;
+        transform.position = transform.position + move_pos;
     }
 }
