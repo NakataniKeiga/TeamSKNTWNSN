@@ -37,30 +37,7 @@ public class Pause : MonoBehaviour
             //メニュー画面表示
             Menu2D.gameObject.SetActive(true);
             MenuBack2D.gameObject.SetActive(true);
-            //Option2D.gameObject.SetActive(true);
-        }
-
-        //Nキーで「ゲーム時間再開」
-        if (Input.GetKey(KeyCode.N))
-        {
-            Time.timeScale = 1;
-
-            //メニュー画面削除
-            Menu2D.gameObject.SetActive(false);
-            Option2D.gameObject.SetActive(false);
-            MenuBack2D.gameObject.SetActive(false);
-        }
-
-        //Hキーで「タイトルシーンに遷移」
-        if (Input.GetKey(KeyCode.H))
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
-
-        //Rキーで「ステージリセット」
-        if (Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Option2D.gameObject.SetActive(true);\
         }
 
         //Kキーで「ミニマップを表示→非表示」
