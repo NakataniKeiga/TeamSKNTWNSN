@@ -14694,10 +14694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 143732160}
-  MAX_X_R: 100
-  MAX_X_L: 100
-  MAX_Y_R: 100
-  MAX_Y_L: 100
+  MAX_X_R: 35.45
+  MAX_X_L: -35.35
+  MAX_Y_R: 37.84
+  MAX_Y_L: 96.67
 --- !u!1 &1945059121
 GameObject:
   m_ObjectHideFlags: 0
