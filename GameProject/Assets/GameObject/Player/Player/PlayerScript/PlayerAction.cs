@@ -56,7 +56,7 @@ public class PlayerAction : MonoBehaviour
 
             cameraPos = this.gameObject.transform.position;
             cameraPos.y += 5f;
-            cameraPos.z += -30f;
+            cameraPos.z += -15f;
             maincamera.transform.position = cameraPos;
 
             if (Input.GetKey(KeyCode.RightArrow))
