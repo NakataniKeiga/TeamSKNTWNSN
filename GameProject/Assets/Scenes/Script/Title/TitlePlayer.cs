@@ -45,6 +45,6 @@ public class TitlePlayer : MonoBehaviour
 
         // ŒvŽZŒ‹‰Ê‚ð‚à‚Æ‚É–ß‚·
         transform.position = pos;
-        transform.localScale = scale;
+        //transform.localScale = scale;
     }
 }
