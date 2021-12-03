@@ -18,6 +18,10 @@ public class PlayerAction : MonoBehaviour
     GameObject maincamera;
     Vector3 cameraPos;
 
+    public float MAX_X_R;
+    public float MAX_X_L;
+    public float MAX_Y_R;
+    public float MAX_Y_L;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +61,36 @@ public class PlayerAction : MonoBehaviour
             cameraPos = this.gameObject.transform.position;
             cameraPos.y += 5f;
             cameraPos.z += -30f;
+
+            //if (cameraPos.x > MAX_X_R)
+            //{
+
+            //    cameraPos.x = (cameraPos.x - MAX_X_R);
+
+            //}
+            //if (transform.position.x + cameraPos.x < MAX_X_L)
+            //{
+
+            //    cameraPos.x = (transform.position.x - MAX_X_L);
+
+            //}
+            //if (transform.position.y + cameraPos.y < freecamera_script.MAX_Y_R)
+            //{
+
+            //    cameraPos.y = (transform.position.y - freecamera_script.MAX_Y_R) + 5f;
+
+            //}
+            //if (transform.position.y + cameraPos.y > freecamera_script.MAX_Y_L)
+            //{
+
+            //    cameraPos.y = (transform.position.y - freecamera_script.MAX_Y_L) - 30f;
+
+            //}
+
             maincamera.transform.position = cameraPos;
+
+
+
 
             if (Input.GetKey(KeyCode.RightArrow))
             {
