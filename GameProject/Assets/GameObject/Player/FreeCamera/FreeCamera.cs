@@ -49,20 +49,37 @@ public class FreeCamera : MonoBehaviour
         {
             v = CrossPlatformInputManager.GetAxis("pov_V");
         }
-        if (transform.position.x < MAX_X_R)
-        {
-            move_pos = v * Vector3.forward + h * Vector3.right;
-        }
+        
+        move_pos = v * Vector3.forward + h * Vector3.right;
         move_pos.y = move_pos.z;
         move_pos.z = 0.0f;
-        if(transform.position.x > MAX_X_R)
+
+        if(transform.position.x + move_pos.x > MAX_X_R)
         {
 
             move_pos.x = (transform.position.x - MAX_X_R) * -1;
             
         }
+        if (transform.position.x + move_pos.x < MAX_X_L)
+        {
+
+            move_pos.x = (transform.position.x - MAX_X_L) * -1;
+
+        }
+        if (transform.position.y + move_pos.y < MAX_Y_R)
+        {
+
+            move_pos.y = (transform.position.y - MAX_Y_R) * -1;
+
+        }
+        if (transform.position.y + move_pos.y > MAX_Y_L)
+        {
+
+            move_pos.y = (transform.position.y - MAX_Y_L) * -1;
+
+        }
+
 
         transform.position = transform.position + move_pos;
-        
     }
 }
