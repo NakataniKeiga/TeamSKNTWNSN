@@ -12,10 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d32425c4e1e1647b3feafb680cb8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_mirror: {fileID: 0}
-  SET_ROT_X: 0
-  SET_ROT_Y: 0
-  SET_ROT_Z: 0
+  move_mirror_1: {fileID: 0}
+  SET_ROT_X_1: 0
+  SET_ROT_Y_1: 0
+  SET_ROT_Z_1: 0
+  Move_mirror:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  START_POS:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  START_ROT:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  SET_ROT:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  SET_POS:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  is_RETURN: 00000000
+  is_REVERSE: 00000000
 --- !u!1 &8175184357994110218
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,6 +52,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8538175905993067925}
+  - component: {fileID: 8822201881559772672}
   m_Layer: 0
   m_Name: switch 1
   m_TagString: Untagged
@@ -48,6 +76,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8822201881559772672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175184357994110218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e309cd1509a55244eb71eda62367bd52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7521584717723610854
 PrefabInstance:
   m_ObjectHideFlags: 0
