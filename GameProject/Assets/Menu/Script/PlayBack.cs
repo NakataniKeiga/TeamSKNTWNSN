@@ -24,10 +24,10 @@ public class PlayBack : MonoBehaviour
 
     public void PlayBack_Move()
     {
+        Time.timeScale = 1;
+
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(false);
         MenuBack2D.gameObject.SetActive(false);
-
-        Time.timeScale = 1;
     }
 }
