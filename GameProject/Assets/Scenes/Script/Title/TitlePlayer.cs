@@ -8,6 +8,7 @@ public class TitlePlayer : MonoBehaviour
 
     public float m_playerSpeed = 0.01f;   // プレイヤーの移動速度
     public float m_playerStop = 0.0f;     // プレイヤーの止まる位置
+    public float m_playerScale = 1.0f;    // プレイヤーのスケール
     public static bool m_stopFlg = false; // プレイヤーが止まっているかどうか
 
     // Start is called before the first frame update
@@ -22,10 +23,15 @@ public class TitlePlayer : MonoBehaviour
     {
         // プレイヤーの位置保存
         Vector3 pos = transform.position;
+        Vector3 scale = transform.localScale;
+
+        //scale.x = m_playerScale;
+        //scale.y = m_playerScale;
+        //scale.z = m_playerScale;
 
         // この値より小さい時だけ かつ
         // 止まるフラグがオフの時 進む
-        if(pos.x < m_playerStop && m_stopFlg == false){
+        if (pos.x < m_playerStop && m_stopFlg == false){
             pos.x += m_playerSpeed;            // 右に走っていくように
         }
 
@@ -39,5 +45,6 @@ public class TitlePlayer : MonoBehaviour
 
         // 計算結果をもとに戻す
         transform.position = pos;
+        transform.localScale = scale;
     }
 }
