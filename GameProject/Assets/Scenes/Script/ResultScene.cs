@@ -14,8 +14,8 @@ public class ResultScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // エンターキーまたはコントローラー押したら
-        if(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("action_joy"))
+        // エスケープキーまたはコントローラー押したら
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("action_joy"))
         {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
