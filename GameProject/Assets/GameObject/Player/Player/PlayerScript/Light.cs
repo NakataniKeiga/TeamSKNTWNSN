@@ -12,6 +12,7 @@ public class Light : MonoBehaviour
     public bool direction = true;//向いている方向 //ture：右   //false：左
 
     private Vector3 start_pos;
+    GameObject lightcamera;
 
     GameObject light;//ライトスクリプト
     ChangePlayer script;
@@ -20,6 +21,8 @@ public class Light : MonoBehaviour
     stage_test_script StageScript;
 
     Vector3 PlayerPos;
+    Vector3 cameraPos;
+
 
     public GameObject targetObj;
     public GameObject targetobject;
@@ -32,6 +35,8 @@ public class Light : MonoBehaviour
 
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
+
+        lightcamera = GameObject.Find("LightCamera");
 
         start_pos = transform.position;
 
@@ -52,7 +57,10 @@ public class Light : MonoBehaviour
             transform.position = result;
         
         }
-
+        cameraPos = this.gameObject.transform.position;
+        cameraPos.y += 5f;
+        cameraPos.z += -30f;
+        lightcamera.transform.position = cameraPos;
 
         if (StageScript.isLight_Flg == true)
         {

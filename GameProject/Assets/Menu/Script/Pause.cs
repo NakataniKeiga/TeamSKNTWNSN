@@ -37,7 +37,23 @@ public class Pause : MonoBehaviour
             //メニュー画面表示
             Menu2D.gameObject.SetActive(true);
             MenuBack2D.gameObject.SetActive(true);
-            //Option2D.gameObject.SetActive(true);\
+        }
+
+        //Oキーで「オプション表示」
+        if(Input.GetKey(KeyCode.O))
+        {
+            Time.timeScale = 0;
+
+            Option2D.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.N))
+        {
+            Time.timeScale = 1;
+
+            Menu2D.gameObject.SetActive(false);
+            Option2D.gameObject.SetActive(false);
+            MenuBack2D.gameObject.SetActive(false);
         }
 
         //Kキーで「ミニマップを表示→非表示」
