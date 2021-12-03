@@ -13,6 +13,8 @@ public class Mirror_script : MonoBehaviour
     public float ADD_ROT_Z = 0.00f;
     GameObject stage;
     stage_test_script script;
+    public AudioClip se_Mirror;
+    private AudioSource audio_source;
     public enum ROTATE_TAG
     {
         RIGHT,
@@ -26,6 +28,7 @@ public class Mirror_script : MonoBehaviour
         Start_Rot = transform.localEulerAngles;
         Hit_flg = false;
         Light_flg = false;
+        audio_source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,11 +45,19 @@ public class Mirror_script : MonoBehaviour
                 {
                     Debug.Log("ä÷êîÇåƒÇ—Ç‹Ç∑");
                     MirrorRotate(ROTATE_TAG.RIGHT);
+                    if(audio_source.isPlaying==false)
+                    {
+                        audio_source.PlayOneShot(se_Mirror);
+                    }
                 }
                 else if (Input.GetKey(KeyCode.DownArrow) || Input.GetButton("MirrorRot_L"))
                 {
                     Debug.Log("ä÷êîÇåƒÇ—Ç‹Ç∑");
                     MirrorRotate(ROTATE_TAG.LEFT);
+                    if (audio_source.isPlaying == false)
+                    {
+                        audio_source.PlayOneShot(se_Mirror);
+                    }
                 }
                 else if (Input.GetKey(KeyCode.R))
                 {
