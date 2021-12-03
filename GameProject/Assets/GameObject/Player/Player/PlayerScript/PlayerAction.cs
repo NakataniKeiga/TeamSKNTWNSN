@@ -86,7 +86,6 @@ public class PlayerAction : MonoBehaviour
             //    cameraPos.y = (transform.position.y - freecamera_script.MAX_Y_L) - 30f;
 
             //}
-
             maincamera.transform.position = cameraPos;
 
 
@@ -95,22 +94,22 @@ public class PlayerAction : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 change = false;
-                Debug.Log("‰E");
+                Debug.Log("â€°E");
             }
             if (Input.GetKey(KeyCode.D))
             {
                 change = false;
-                Debug.Log("‰E");
+                Debug.Log("â€°E");
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 change = true;
-                Debug.Log("¶");
+                Debug.Log("ÂÂ¶");
             }
             if (Input.GetKey(KeyCode.A))
             {
                 change = true;
-                Debug.Log("¶");
+                Debug.Log("ÂÂ¶");
             }
 
             if (Input.GetAxis("joystick_L_H") > 0)
@@ -154,7 +153,7 @@ public class PlayerAction : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
 
-            Debug.Log("“–‚½‚Á‚½");
+            Debug.Log("â€œâ€“â€šÂ½â€šÃâ€šÂ½");
         }
         if (transform.parent == null && collision.gameObject.tag == "Move_Block")
         {
