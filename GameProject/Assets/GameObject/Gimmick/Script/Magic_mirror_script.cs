@@ -21,17 +21,27 @@ public class Magic_mirror_script : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
-        if(is_Mirror == true)//true‚È‚ç‹¾
+        if (is_Mirror == true)//true‚È‚ç‹¾
         {
 
         }
-        else if(is_Galss == true)//false‚È‚çƒKƒ‰ƒX
+        else if (is_Galss == true)//false‚È‚çƒKƒ‰ƒX
         {
             Obj.GetComponent<Collider>().enabled = false;
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (is_Mirror == true)//true‚È‚ç‹¾
+        {
+
+        }
+        else if (is_Galss == true)//false‚È‚çƒKƒ‰ƒX
+        {
+            Obj.GetComponent<Collider>().enabled = true;
         }
     }
 }
