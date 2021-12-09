@@ -38,6 +38,15 @@ public class warpScript : MonoBehaviour
 
                 audio_source.PlayOneShot(se_warp); // ワープの音鳴らす
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Debug.Log("ボタンが押された");
+                next_pos = next_port.GetComponent<Transform>().position;
+                other.gameObject.GetComponent<Transform>().position = next_pos;
+                Debug.Log("座標更新");
+
+                audio_source.PlayOneShot(se_warp); // ワープの音鳴らす
+            }
         }
     }
 
