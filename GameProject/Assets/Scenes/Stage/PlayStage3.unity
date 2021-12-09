@@ -2345,11 +2345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.66
+      value: 65.9
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 108.6
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11298,6 +11298,7 @@ MonoBehaviour:
   searchArea: {fileID: 1171714477}
   searchAngle: 45
   se_WatchTower: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!135 &1171714477
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12027,6 +12028,7 @@ MonoBehaviour:
   searchArea: {fileID: 1235791728}
   searchAngle: 45
   se_WatchTower: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!195 &1235791727
 NavMeshAgent:
   m_ObjectHideFlags: 0
