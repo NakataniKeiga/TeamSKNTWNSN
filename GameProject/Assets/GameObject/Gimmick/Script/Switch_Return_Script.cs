@@ -45,11 +45,14 @@ public class Switch_Return_Script : MonoBehaviour
                 if (REVERSE_FLG == true)
                 {
                     GetComponent<Transform>().position = START_POS;
+                    GetComponent<Transform>().eulerAngles = START_ROT;
                     REVERSE_FLG = false;
                 }
                 else if (REVERSE_FLG == false)
                 {
                     GetComponent<Transform>().position = SET_POS;
+                    GetComponent<Transform>().eulerAngles = SET_ROT;
+
                     REVERSE_FLG = true;
 
                 }
