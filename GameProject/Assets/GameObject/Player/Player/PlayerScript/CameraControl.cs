@@ -22,7 +22,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Light"))
         {
             lightCamera.SetActive(true);
             mainCamera.SetActive(false);
