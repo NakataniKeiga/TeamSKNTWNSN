@@ -18,10 +18,17 @@ public class WatchTower : MonoBehaviour
     public AudioClip se_WatchTower;    // ŠÄ‹“ƒ‚ÉŒ©‚Â‚©‚Á‚½‚ÌSE
     private AudioSource audio_source;  // AudioSource
 
+    private Vector3 start_pos;
+    [SerializeField]
+    private GameObject Player;
+
     private void Start()
     {
         // ’Ç‰Á‚µ‚½‚Ì‚ÅGet‚·‚é
         audio_source = GetComponent<AudioSource>();
+
+        start_pos = Player.GetComponent<Transform>().position;
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -37,6 +44,8 @@ public class WatchTower : MonoBehaviour
             {
                 Debug.Log("ålŒö”­Œ©: " + angle);
                 //onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Chase, other.transform);
+
+                Player.GetComponent<Transform>().position = start_pos;
 
                 // Œ©‚Â‚©‚Á‚½‚Ì‰¹Ä¶
                 //audio_source.PlayOneShot(se_WatchTower);
