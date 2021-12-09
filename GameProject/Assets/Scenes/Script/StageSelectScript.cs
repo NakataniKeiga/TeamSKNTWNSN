@@ -32,27 +32,27 @@ public class StageSelectScript : MonoBehaviour
                 {
                     case 1:
                         Debug.Log("ボタンが押された");
-                        SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
+                        SceneManager.LoadScene("PlayStage1", LoadSceneMode.Single);
                         Debug.Log("Sceneを更新");
                         break;
                     case 2:
                         Debug.Log("ボタンが押された");
-                        SceneManager.LoadScene("Stage2", LoadSceneMode.Single);
+                        SceneManager.LoadScene("PlayStage2", LoadSceneMode.Single);
                         Debug.Log("Sceneを更新");
                         break;
                     case 3:
                         Debug.Log("ボタンが押された");
-                        SceneManager.LoadScene("Stage3", LoadSceneMode.Single);
+                        SceneManager.LoadScene("PlayStage3", LoadSceneMode.Single);
                         Debug.Log("Sceneを更新");
                         break;
                     case 4:
                         Debug.Log("ボタンが押された");
-                        SceneManager.LoadScene("MocStage4", LoadSceneMode.Single);
+                        SceneManager.LoadScene("PlayStage4", LoadSceneMode.Single);
                         Debug.Log("Sceneを更新");
                         break;
                     case 5:
                         Debug.Log("ボタンが押された");
-                        SceneManager.LoadScene("Stage5", LoadSceneMode.Single);
+                        SceneManager.LoadScene("PlayStage5", LoadSceneMode.Single);
                         Debug.Log("Sceneを更新");
                         break;
                 }

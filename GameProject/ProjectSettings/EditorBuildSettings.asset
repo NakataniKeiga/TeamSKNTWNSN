@@ -33,6 +33,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Moc/MocStage4.unity
     guid: 17c1ec43d8c19bd44809de01c4ce8117
   - enabled: 1
+    path: Assets/Scenes/Stage/PlayStage1.unity
+    guid: 5d7ffc7c4f268aa499d93f2b026e248a
+  - enabled: 1
+    path: Assets/Scenes/Stage/PlayStage2.unity
+    guid: 05a950b0f1c693d4c9e1c59c28aefc96
+  - enabled: 1
+    path: Assets/Scenes/Stage/PlayStage3.unity
+    guid: 2443fa16de9437d4b84a27800998b57c
+  - enabled: 1
+    path: Assets/Scenes/Stage/PlayStage4.unity
+    guid: 255a93628bd583142aee64f157efdd99
+  - enabled: 1
+    path: Assets/Scenes/Stage/PlayStage5.unity
+    guid: a56f10971c0b3f74a8097965bbb38256
+  - enabled: 1
     path: Assets/Scenes/ResultScene.unity
     guid: 8f8f09e5a796e6046a6eb3c8805d9a24
   m_configObjects: {}
