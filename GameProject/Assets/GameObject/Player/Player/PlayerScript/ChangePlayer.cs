@@ -9,11 +9,16 @@ public class ChangePlayer : MonoBehaviour
     public GameObject player;
     public GameObject LightCube;
 
+    GameObject stage;
+    stage_test_script StageScript;
+
     // Start is called before the first frame update
     void Start()
     {
         LightCube.SetActive(false);
 
+        stage = GameObject.Find("stageReturn");
+        StageScript = stage.GetComponent<stage_test_script>();
         
 
     }
@@ -21,7 +26,27 @@ public class ChangePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        //if (Input.GetKeyDown(KeyCode.Q)) ;
+        //{
+        //    if (LightCube.activeSelf)
+        //    {
+        //        player.SetActive(true);
+        //        LightCube.SetActive(false);
+        //        LightStatus = false;
+
+        //    }
+
+        //    else
+        //    {
+        //        player.SetActive(false);
+        //        LightCube.SetActive(true);
+        //        LightStatus = true;
+        //        LightCube.transform.position = player.transform.position;
+
+        //    }
+        //}
+
+        if (Input.GetButtonDown("Light"))
         {
             if (LightCube.activeSelf)
             {
@@ -46,6 +71,7 @@ public class ChangePlayer : MonoBehaviour
             player.SetActive(true);
         
         }
+
 
     }
 }
