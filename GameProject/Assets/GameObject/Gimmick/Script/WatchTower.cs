@@ -22,12 +22,18 @@ public class WatchTower : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 
+    GameObject stage;
+    stage_test_script StageScript;
+
     private void Start()
     {
         // í«â¡ÇµÇΩÇÃÇ≈GetÇ∑ÇÈ
         audio_source = GetComponent<AudioSource>();
 
         start_pos = Player.GetComponent<Transform>().position;
+
+        stage = GameObject.Find("stageReturn");
+        StageScript = stage.GetComponent<stage_test_script>();
 
     }
 
@@ -45,7 +51,11 @@ public class WatchTower : MonoBehaviour
                 Debug.Log("éÂêlåˆî≠å©: " + angle);
                 //onlyForwardSearchEnemy.SetState(WatchTower.EnemyState.Chase, other.transform);
 
-                Player.GetComponent<Transform>().position = start_pos;
+                if(StageScript.isLight_Flg == false)
+                {
+                     Player.GetComponent<Transform>().position = start_pos;
+                }
+
 
                 // å©Ç¬Ç©Ç¡ÇΩéûÇÃâπçƒê∂
                 //audio_source.PlayOneShot(se_WatchTower);
