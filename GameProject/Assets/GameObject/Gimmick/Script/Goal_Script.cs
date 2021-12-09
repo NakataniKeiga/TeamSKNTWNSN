@@ -7,12 +7,15 @@ public class Goal_Script : MonoBehaviour
 {
     GameObject stage;
     stage_test_script StageScript;
+    public AudioClip goal_se;
+    private AudioSource audio_source;
 
     // Start is called before the first frame update
     void Start()
     {
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
+        audio_source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class Goal_Script : MonoBehaviour
         if(collision.gameObject.tag == "Player" && StageScript.isLight_Flg == false)
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name, UnloadSceneOptions.None);
+            audio_source.PlayOneShot(goal_se);
 
             if(SceneManager.GetActiveScene().name == "MocStage1")
             {
