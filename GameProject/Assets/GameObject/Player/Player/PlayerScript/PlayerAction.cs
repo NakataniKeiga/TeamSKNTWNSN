@@ -121,6 +121,10 @@ public class PlayerAction : MonoBehaviour
                 change = true;
             }
         }
+        if (transform.position.y <0)
+        {
+            transform.position = new Vector3(transform.position.x,1.5f, transform.position.z);
+        }
     }
 
     private void FixedUpdate()

@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Moc/MocStage3.unity
     guid: c890ada52da510e4ea12af36b55b1ef5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Moc/MocStage4.unity
     guid: 17c1ec43d8c19bd44809de01c4ce8117
   - enabled: 1
@@ -44,7 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage/PlayStage4.unity
     guid: 255a93628bd583142aee64f157efdd99
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage/PlayStage5.unity
     guid: a56f10971c0b3f74a8097965bbb38256
   - enabled: 1
