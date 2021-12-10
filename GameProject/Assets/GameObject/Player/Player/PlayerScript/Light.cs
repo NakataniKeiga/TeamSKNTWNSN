@@ -65,7 +65,7 @@ public class Light : MonoBehaviour
         if (StageScript.isLight_Flg == true)
         {
 
-            if (targetObj.activeSelf == true)
+            if (targetObj.activeSelf == false)
             {
                 rb.AddForce(new Vector3(0, 0, 0));
             }
