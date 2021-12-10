@@ -66,7 +66,14 @@ public class Mirror_script : MonoBehaviour
                 }
             }
         }
-
+        if(Light_flg == true)
+        {
+            GetComponent<Collider>().isTrigger = false;
+        }
+        else if(Light_flg == false)
+        {
+            GetComponent<Collider>().isTrigger = true;
+        }
     }
 
     void MirrorRotate(ROTATE_TAG tag)
@@ -83,22 +90,39 @@ public class Mirror_script : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("プレイヤーがあたりました。");
             Hit_flg = true;
 
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("プレイヤーがあたりました。");
+    //        Hit_flg = true;
 
-    private void OnCollisionExit(Collision collision)
+    //    }
+    //}
+
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("プレイヤーが離れました。");
             Hit_flg = false;
         }
     }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("プレイヤーが離れました。");
+    //        Hit_flg = false;
+    //    }
+    //}
 }

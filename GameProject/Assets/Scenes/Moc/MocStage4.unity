@@ -2107,6 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7eb71f5bf5773445853a2dfcfc95190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal_se: {fileID: 0}
 --- !u!4 &215104820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7526727135987125805, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
@@ -5120,6 +5121,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2058537743}
     m_Modifications:
+    - target: {fileID: 2203307360725725449, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2203307360731579239, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5166,7 +5171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203307360731583785, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 2203307360731583785, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15270,6 +15275,7 @@ MonoBehaviour:
   searchArea: {fileID: 1784217437}
   searchAngle: 45
   se_WatchTower: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!135 &1784217437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18260,6 +18266,7 @@ MonoBehaviour:
   searchArea: {fileID: 2135166004}
   searchAngle: 45
   se_WatchTower: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!195 &2135166003
 NavMeshAgent:
   m_ObjectHideFlags: 0
