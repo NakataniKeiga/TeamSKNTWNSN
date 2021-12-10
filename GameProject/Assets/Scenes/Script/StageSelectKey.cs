@@ -11,6 +11,12 @@ public class StageSelectKey : MonoBehaviour
     public AudioClip barred_se;
     private AudioSource audio_source;
 
+    public Vector3 move_p_pos;
+    public Vector3 move_c_pos;
+
+    public GameObject player;
+    public GameObject camera;
+
     public GameObject lattice;
     private Vector3 move_pos;
     public GameObject[] Door = new GameObject[STAGE_KEY_NUM];
@@ -18,7 +24,7 @@ public class StageSelectKey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int index = 0;index< STAGE_KEY_NUM; index++)
+        for (int index = 0; index < STAGE_KEY_NUM; index++)
         {
             is_Key[index] = Goal_Key_script.GetIsKey(index);
         }
@@ -26,6 +32,11 @@ public class StageSelectKey : MonoBehaviour
         if (is_Key[1] == true || is_Key[2] == true)
         {
             is_Key[0] = false;
+        }
+        if (is_Key[3] == true)
+        {
+            player.GetComponent<Transform>().position = move_p_pos;
+            camera.GetComponent<Transform>().position = move_c_pos;
         }
 
         audio_source = GetComponent<AudioSource>();
@@ -35,7 +46,7 @@ public class StageSelectKey : MonoBehaviour
     void Update()
     {
         int index = 0;
-        foreach(GameObject door in Door)
+        foreach (GameObject door in Door)
         {
             if (is_Key[index] == true)
             {

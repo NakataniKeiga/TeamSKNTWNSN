@@ -1652,6 +1652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Key: 00000000
   barred_se: {fileID: 8300000, guid: 7da9968b2beda7f438a0f75d0b959afd, type: 3}
+  move_p_pos: {x: 0, y: 39.39, z: -1.19}
+  move_c_pos: {x: 0, y: 45.76, z: -14.65}
+  player: {fileID: 608580175}
+  camera: {fileID: 416506953}
   lattice: {fileID: 155453375}
   Door:
   - {fileID: 566725492}
