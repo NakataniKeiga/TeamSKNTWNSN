@@ -41,6 +41,8 @@ public class CameraControl : MonoBehaviour
                 lightCamera.SetActive(false);
                 mainCamera.SetActive(true);
             }
+
+        }
             if (Input.GetButtonDown("CameraChenge"))
             {
                 if (lightCamera.activeSelf == false)
@@ -57,7 +59,7 @@ public class CameraControl : MonoBehaviour
                     }
                 }
             }
-        }
+        
 
     }
 }

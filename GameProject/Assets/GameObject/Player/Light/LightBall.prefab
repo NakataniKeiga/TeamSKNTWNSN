@@ -145,7 +145,7 @@ MonoBehaviour:
   Lightstatus: 0
   direction: 1
   targetObj: {fileID: 405539896178839142}
-  targetobject: {fileID: 0}
+  targetobject: {fileID: 7016876420249747784, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
 --- !u!1001 &405539897620160708
 PrefabInstance:
   m_ObjectHideFlags: 0
