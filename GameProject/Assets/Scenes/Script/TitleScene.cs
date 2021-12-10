@@ -19,8 +19,8 @@ public class TitleScene : MonoBehaviour
     void Update()
     {
         /// ‚±‚±‚Å˜g‚ÌˆÚ“®”ÍˆÍ‚ğŒˆ‚ß‚Ä‚¢‚é---------------------
-        /// y‚à‚µ‰E‚ª‰Ÿ‚³‚ê‚½z ‚©‚Ây2ˆÈ‰ºz‚Ì
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
+        /// y‚à‚µ‰E‚ª‰Ÿ‚³‚ê‚½ ‚Ü‚½‚Í ¶ƒXƒeƒBƒbƒN‚ª‰E‚É“|‚³‚ê‚½z ‚©‚Ây2ˆÈ‰ºz‚Ì
+        if (Input.GetKeyDown(KeyCode.RightArrow) || 0 < Input.GetAxisRaw("joystick_L_H")){
 
             /// ”Ô†‚ğ‘«‚·
             SelectFrame++;
@@ -31,8 +31,8 @@ public class TitleScene : MonoBehaviour
             }
         }
 
-        /// y‚à‚µ¶‚ª‰Ÿ‚³‚ê‚½z‚©‚Ây1ˆÈãz‚Ì
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)){
+        /// y‚à‚µ¶‚ª‰Ÿ‚³‚ê‚½ ‚Ü‚½‚Í ‰EƒXƒeƒBƒbƒN‚ª¶‚É“|‚³‚ê‚½z‚©‚Ây1ˆÈãz‚Ì
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || 0 > Input.GetAxisRaw("joystick_L_H")){
 
             /// •”‰®”Ô†‚ğˆø‚­
             SelectFrame--;
