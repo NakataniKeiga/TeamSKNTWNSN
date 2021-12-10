@@ -36,11 +36,26 @@ public class PlayerAnime : MonoBehaviour
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
+		bool m_IsEffect;
+
+	//effect管理
+	//　出現させるエフェクト
+	[SerializeField]
+	private GameObject effectObject;
+	//　エフェクトを消す秒数
+	[SerializeField]
+	private float deleteTime;
+	//　エフェクトの出現位置のオフセット値
+	[SerializeField]
+	private float offset_X;
+	//　エフェクトの出現位置のオフセット値
+	[SerializeField]
+	private float offset_Y;
+
+	private ParticleSystem particle;
 
 
-
-
-		void Start()
+	void Start()
 		{
 		rigth = GameObject.Find("player");
 		rightscript = rigth.GetComponent<Right>();
@@ -170,6 +185,19 @@ public class PlayerAnime : MonoBehaviour
 				// don't use that while airborne
 				m_Animator.speed = 1;
 			}
+
+			if(m_IsGrounded == true)
+			{
+				if(m_IsEffect == true)
+				{
+					//着地時effect管理
+					//　ゲームオブジェクト登場時にエフェクトをインスタンス化
+					var instantiateEffect = GameObject.Instantiate(effectObject, transform.position + new Vector3(offset_X, offset_Y, 0f), Quaternion.identity) as GameObject;
+					Destroy(instantiateEffect, deleteTime);
+					m_IsEffect = false;
+				}
+
+			}
 		}
 
 
@@ -183,7 +211,7 @@ public class PlayerAnime : MonoBehaviour
 		}
 
 
-		void HandleGroundedMovement(bool crouch, bool jump)
+	void HandleGroundedMovement(bool crouch, bool jump)
 		{
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
@@ -237,6 +265,7 @@ public class PlayerAnime : MonoBehaviour
 			else
 			{
 				m_IsGrounded = false;
+				m_IsEffect = true;
 				m_GroundNormal = Vector3.up;
 				m_Animator.applyRootMotion = false;
 			}
