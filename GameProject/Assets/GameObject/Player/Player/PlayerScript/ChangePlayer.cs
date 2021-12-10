@@ -45,7 +45,6 @@ public class ChangePlayer : MonoBehaviour
 
         //    }
         //}
-
         if (StageScript.isLight_Flg == true)
         {
 
@@ -56,7 +55,7 @@ public class ChangePlayer : MonoBehaviour
                     player.SetActive(true);
                     LightCube.SetActive(false);
                     LightStatus = false;
-                    
+
                 }
 
                 else
@@ -74,6 +73,7 @@ public class ChangePlayer : MonoBehaviour
                 player.SetActive(true);
 
             }
+
         }
 
     }
