@@ -15,6 +15,7 @@ public class Magic_mirror_script : MonoBehaviour
     public AudioClip se_Mirror;
     private AudioSource audio_source;
     public GameObject Galss;
+    public GameObject mirror;
     public enum ROTATE_TAG
     {
         RIGHT,
@@ -77,12 +78,16 @@ public class Magic_mirror_script : MonoBehaviour
         {
             transform.Rotate(new Vector3(ADD_ROT_X, ADD_ROT_Y, ADD_ROT_Z));
             Galss.GetComponent<Transform>().Rotate(new Vector3(ADD_ROT_X, ADD_ROT_Y, ADD_ROT_Z));
+            mirror.GetComponent<Transform>().Rotate(new Vector3(ADD_ROT_X, ADD_ROT_Y, ADD_ROT_Z));
+
             Debug.Log("è„Ç…å¸ÇØÇ‹Ç∑");
         }
         else if (tag == ROTATE_TAG.LEFT)
         {
             transform.Rotate(new Vector3((-1 * ADD_ROT_X), (-1 * ADD_ROT_Y), (-1 * ADD_ROT_Z)));
             Galss.GetComponent<Transform>().Rotate(new Vector3((-1 * ADD_ROT_X), (-1 * ADD_ROT_Y), (-1 * ADD_ROT_Z)));
+            mirror.GetComponent<Transform>().Rotate(new Vector3((-1 * ADD_ROT_X), (-1 * ADD_ROT_Y), (-1 * ADD_ROT_Z)));
+
             Debug.Log("â∫Ç…å¸ÇØÇ‹Ç∑");
         }
     }
