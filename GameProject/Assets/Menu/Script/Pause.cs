@@ -29,61 +29,69 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Mキーで「ゲーム時間一時停止」
-        if (Input.GetKey(KeyCode.M))
-        {
-            Time.timeScale = 0;
-
-            //メニュー画面表示
-            Menu2D.gameObject.SetActive(true);
-            MenuBack2D.gameObject.SetActive(true);
-        }
-
-        //Oキーで「オプション表示」
-        if(Input.GetKey(KeyCode.O))
-        {
-            Time.timeScale = 0;
-
-            Option2D.gameObject.SetActive(true);
-        }
-
-        if (Input.GetKey(KeyCode.N))
-        {
-            Time.timeScale = 1;
-
-            Menu2D.gameObject.SetActive(false);
-            Option2D.gameObject.SetActive(false);
-            MenuBack2D.gameObject.SetActive(false);
-        }
-
-        //Kキーで「ミニマップを表示→非表示」
-        if (Input.GetKey(KeyCode.K))
-        {
-            MiniMap.gameObject.SetActive(false);
-        }
-
-        //Lキーで「ミニマップ非表示→表示」
-        if (Input.GetKey(KeyCode.L))
-        {
-            MiniMap.gameObject.SetActive(true);
-        }
-
-        //Escキーで「ゲーム終了」--------------------------
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Quit();
-        }
-
-        void Quit()
-        {
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #elif UNITY_STANDALONE
-            UnityEngine.Application.Quit();
-            #endif
-        }
-        //--------------------------------------------------
+       
     }
 
+    public void OpenMenu_Move()
+    {
+        Time.timeScale = 0;
+
+        //メニュー画面表示
+        Menu2D.gameObject.SetActive(true);
+        MenuBack2D.gameObject.SetActive(true);
+    }
+
+    public void PlayBack_Move()
+    {
+        Time.timeScale = 1;
+
+        Menu2D.gameObject.SetActive(false);
+        Option2D.gameObject.SetActive(false);
+        MenuBack2D.gameObject.SetActive(false);
+    }
+
+    public void OpenOption_Move()
+    {
+        Menu2D.gameObject.SetActive(false);
+        Option2D.gameObject.SetActive(true);
+        MiniMap.gameObject.SetActive(false);
+    }
+
+    public void StageReset_Move()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
+
+    public void TitleBack_Move()
+    {
+        SceneManager.LoadScene("TitleScene");
+        Time.timeScale = 1;
+    }
+
+    public void MiniMap_Move()
+    {
+
+    }
+
+    public void MenuBack_Move()
+    {
+        Menu2D.gameObject.SetActive(true);
+        Option2D.gameObject.SetActive(false);
+    }
+
+    public void InitOption_Move()
+    {
+
+    }
+
+    public void QuitApp()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE
+            UnityEngine.Application.Quit();
+#endif
+    }
 }
 
