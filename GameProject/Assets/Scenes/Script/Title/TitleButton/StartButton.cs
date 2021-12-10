@@ -18,7 +18,8 @@ public class StartButton : MonoBehaviour
     void Update()
     {
         /// もし枠がゲームスタートにあるなら(今は仮でモック。あとから変える)
-        if(StageManager.m_instance.m_select == "MocStage4"){
+        if(StageManager.m_instance.m_select == "StageSelect")
+        {
             m_animator.SetBool("ShineFlg", true);  // ゲームスタートボタンは光らせる
         }
 

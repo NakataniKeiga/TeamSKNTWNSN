@@ -1548,7 +1548,8 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.11820686
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7016876420249747785, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
 --- !u!1001 &373787712
 PrefabInstance:
