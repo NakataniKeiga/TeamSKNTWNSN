@@ -30,7 +30,7 @@ public class Light : MonoBehaviour
     void Start()
     {
 
-        light = GameObject.Find("GameObject");
+        light = GameObject.Find("ChangePlayer");
         script = light.GetComponent<ChangePlayer>();
 
         stage = GameObject.Find("stageReturn");
