@@ -24,7 +24,8 @@ public class FrameButton : MonoBehaviour
         Vector3 Pos = recttrancfrofm.anchoredPosition3D;
 
         /// yPlayz‚Ì‚Ì˜g‚ÌˆÊ’u
-        if(StageManager.m_instance.m_select == "MocStage4"){
+        if(StageManager.m_instance.m_select == "StageSelect")
+        {
             Pos.x = -3.0f;
         }
 
