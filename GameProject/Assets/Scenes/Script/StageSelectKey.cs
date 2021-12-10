@@ -6,7 +6,7 @@ public class StageSelectKey : MonoBehaviour
 {
     private const int STAGE_KEY_NUM = 4;
     private float UP_MAX = 10.0f;
-    private const float UP_SPD = 0.05f;
+    private const float UP_SPD = 0.01f;
     public bool[] is_Key = new bool[4];
 
     public GameObject lattice;
