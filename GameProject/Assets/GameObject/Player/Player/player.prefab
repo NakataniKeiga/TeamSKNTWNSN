@@ -5026,6 +5026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   change: 1
+  MAX_X_R: 0
+  MAX_X_L: 0
+  MAX_Y_R: 0
+  MAX_Y_L: 0
 --- !u!114 &7016876420249747787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5046,6 +5050,10 @@ MonoBehaviour:
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
   m_OrigGroundCheckDistance: 1
+  effectObject: {fileID: 0}
+  deleteTime: 0
+  offset_X: 0
+  offset_Y: 0
 --- !u!114 &7016876420249747782
 MonoBehaviour:
   m_ObjectHideFlags: 0
