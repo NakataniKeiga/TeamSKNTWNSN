@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightStatus: 0
   player: {fileID: 1738817388}
-  LightCube: {fileID: 993878255}
+  LightCube: {fileID: 310086597}
 --- !u!4 &29021447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
@@ -1412,6 +1412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
+--- !u!1 &310086597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 405539896178839142, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+  m_PrefabInstance: {fileID: 384571798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330908794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1346824047543064, guid: dec5d44d739993a4fbe33aec926695f4, type: 3}
@@ -1654,6 +1659,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405539896178839143, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+      propertyPath: targetobject
+      value: 
+      objectReference: {fileID: 1738817388}
+    - target: {fileID: 405539896178839149, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7938859213658914608, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
       propertyPath: m_Name
       value: LightBall
@@ -3852,11 +3865,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
   m_PrefabInstance: {fileID: 1550652655}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &993878255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7938859213658914608, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
-  m_PrefabInstance: {fileID: 384571798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1004090954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
@@ -5766,7 +5774,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1284021874}
   lightCamera: {fileID: 2061480438}
   freeCamera: {fileID: 1314807530}
-  lightball: {fileID: 993878255}
+  lightball: {fileID: 310086597}
 --- !u!4 &1429931375
 Transform:
   m_ObjectHideFlags: 0
