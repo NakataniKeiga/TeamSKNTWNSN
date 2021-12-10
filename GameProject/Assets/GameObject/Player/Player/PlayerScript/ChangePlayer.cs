@@ -45,33 +45,36 @@ public class ChangePlayer : MonoBehaviour
 
         //    }
         //}
-
-        if (Input.GetButtonDown("Light"))
+        if (StageScript.isLight_Flg == true)
         {
-            if (LightCube.activeSelf)
+
+            if (Input.GetButtonDown("Light"))
+            {
+                if (LightCube.activeSelf)
+                {
+                    player.SetActive(true);
+                    LightCube.SetActive(false);
+                    LightStatus = false;
+
+                }
+
+                else
+                {
+                    player.SetActive(false);
+                    LightCube.SetActive(true);
+                    LightStatus = true;
+                    LightCube.transform.position = player.transform.position;
+
+                }
+            }
+
+            if (LightCube.active == false)
             {
                 player.SetActive(true);
-                LightCube.SetActive(false);
-                LightStatus = false;
 
             }
 
-            else
-            {
-                player.SetActive(false);
-                LightCube.SetActive(true);
-                LightStatus = true;
-                LightCube.transform.position = player.transform.position;
-
-            }
         }
-
-        if (LightCube.active == false)
-        {
-            player.SetActive(true);
-        
-        }
-
 
     }
 }
