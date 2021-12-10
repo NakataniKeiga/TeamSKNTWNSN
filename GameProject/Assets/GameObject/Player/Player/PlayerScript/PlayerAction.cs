@@ -17,7 +17,7 @@ public class PlayerAction : MonoBehaviour
     private Vector3 start_pos;
     GameObject maincamera;
     Vector3 cameraPos;
-
+ 
     public float MAX_X_R;
     public float MAX_X_L;
     public float MAX_Y_R;
@@ -123,7 +123,7 @@ public class PlayerAction : MonoBehaviour
         }
         if (transform.position.y <0)
         {
-            transform.position = new Vector3(transform.position.x,1.5f, transform.position.z);
+            transform.position = start_pos;
         }
     }
 
