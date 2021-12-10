@@ -392,7 +392,7 @@ MonoBehaviour:
   ADD_ROT_X: 0.2
   ADD_ROT_Y: 0
   ADD_ROT_Z: 0
-  se_Mirror: {fileID: 0}
+  se_Mirror: {fileID: 8300000, guid: 6ae298a1450466145aa6f1841ef0ee09, type: 3}
 --- !u!82 &3126412392081220810
 AudioSource:
   m_ObjectHideFlags: 0
