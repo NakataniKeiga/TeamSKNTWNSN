@@ -8,6 +8,8 @@ public class StageSelectKey : MonoBehaviour
     private float UP_MAX = 10.0f;
     private const float UP_SPD = 0.05f;
     public bool[] is_Key = new bool[4];
+    public AudioClip barred_se;
+    private AudioSource audio_source;
 
     public GameObject lattice;
     private Vector3 move_pos;
@@ -25,6 +27,8 @@ public class StageSelectKey : MonoBehaviour
         {
             is_Key[0] = false;
         }
+
+        audio_source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,8 +51,14 @@ public class StageSelectKey : MonoBehaviour
         if (is_Key[2] == true)
         {
             move_pos = lattice.GetComponent<Transform>().position;
-            if(UP_MAX > 0)
+
+            if (UP_MAX > 0)
             {
+                if (audio_source.isPlaying == false)
+                {
+                    audio_source.PlayOneShot(barred_se);
+                }
+
                 move_pos.y += UP_SPD;
                 lattice.GetComponent<Transform>().position = move_pos;
                 UP_MAX -= UP_SPD;
