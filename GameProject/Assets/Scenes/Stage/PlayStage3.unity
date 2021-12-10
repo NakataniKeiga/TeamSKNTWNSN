@@ -2344,6 +2344,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
   m_PrefabInstance: {fileID: 263808149}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &266153261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266153263}
+  - component: {fileID: 266153262}
+  m_Layer: 0
+  m_Name: ChangePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &266153262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266153261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25dd72e74356c9940acc2c2a0e72b597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightStatus: 0
+  player: {fileID: 272477645}
+  LightCube: {fileID: 88134822}
+--- !u!4 &266153263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266153261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -77.16202, y: -61.775078, z: 75.579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272477644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14950,7 +14996,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592091482}
-  - component: {fileID: 1592091481}
   - component: {fileID: 1592091480}
   m_Layer: 0
   m_Name: GameObject
@@ -14975,21 +15020,6 @@ MonoBehaviour:
   lightCamera: {fileID: 1130797721}
   freeCamera: {fileID: 1657783202}
   lightball: {fileID: 88134822}
---- !u!114 &1592091481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592091479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25dd72e74356c9940acc2c2a0e72b597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LightStatus: 0
-  player: {fileID: 272477645}
-  LightCube: {fileID: 88134822}
 --- !u!4 &1592091482
 Transform:
   m_ObjectHideFlags: 0
