@@ -45,10 +45,18 @@ public class Goal_Key_script : MonoBehaviour
     {
         if (StageScript.isLight_Flg == false)//通常状態なら押し返す
         {
-            SetIsKey(Key_Number, true);
-            SetIsKey(Key_Number - 1, false);
-            SceneManager.LoadScene("StageSelect", LoadSceneMode.Single);
-            Debug.Log("Sceneを更新");
+            if (Key_Number != 4)
+            {
+                SetIsKey(Key_Number, true);
+                SetIsKey(Key_Number - 1, false);
+                SceneManager.LoadScene("StageSelect", LoadSceneMode.Single);
+                Debug.Log("Sceneを更新");
+            }
+            else if(Key_Number == 4)
+            {
+                SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
+                Debug.Log("Sceneを更新");
+            }
         }
     }
 }
