@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightStatus: 0
   player: {fileID: 1738817388}
-  LightCube: {fileID: 1446526247}
+  LightCube: {fileID: 310086597}
 --- !u!4 &29021447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
@@ -5774,7 +5774,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1284021874}
   lightCamera: {fileID: 2061480438}
   freeCamera: {fileID: 1314807530}
-  lightball: {fileID: 1446526247}
+  lightball: {fileID: 310086597}
 --- !u!4 &1429931375
 Transform:
   m_ObjectHideFlags: 0
@@ -6037,11 +6037,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32475dbabf1a0ee44b548457fa97b4f2, type: 3}
---- !u!1 &1446526247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 405539896178839142, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
-  m_PrefabInstance: {fileID: 384571798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1450887576
 PrefabInstance:
   m_ObjectHideFlags: 0
