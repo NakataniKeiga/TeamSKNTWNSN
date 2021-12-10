@@ -2713,6 +2713,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6, y: 0.081907, z: 6}
   m_Center: {x: 0, y: 0.0409535, z: 0}
+--- !u!1 &606043471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2203307360732010623, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
+  m_PrefabInstance: {fileID: 1678056370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &609395935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2203307360732010623, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
+  m_PrefabInstance: {fileID: 1975421132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &630088265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
@@ -3188,6 +3198,58 @@ PrefabInstance:
       propertyPath: move_mirror
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: SET_POS.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: SET_ROT.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: START_POS.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: START_ROT.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: is_RETURN.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: is_REVERSE.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: Move_mirror.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: SET_ROT.Array.data[0].x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: SET_ROT.Array.data[1].x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: is_RETURN.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: is_RETURN.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: Move_mirror.Array.data[0]
+      value: 
+      objectReference: {fileID: 609395935}
+    - target: {fileID: 258715015155914586, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
+      propertyPath: Move_mirror.Array.data[1]
+      value: 
+      objectReference: {fileID: 606043471}
     - target: {fileID: 8175184357994110218, guid: 0f4ed2a24bfb9144e80cd52500a32c33, type: 3}
       propertyPath: m_Name
       value: switch
@@ -7257,7 +7319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203307360732010623, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_Name
-      value: Mirror
+      value: Move_Mirror2
       objectReference: {fileID: 0}
     - target: {fileID: 3126412392081220810, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_audioClip
@@ -9547,7 +9609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203307360732010623, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
       propertyPath: m_Name
-      value: Mirror
+      value: Move_Mirror
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
