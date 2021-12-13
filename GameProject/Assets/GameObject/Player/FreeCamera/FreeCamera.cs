@@ -6,6 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 public class FreeCamera : MonoBehaviour
 {
 
+    public float MOVE_SPD = 1.0f;
+
     private Vector3 move_pos;
 
     private Vector3 start_set_pos;
@@ -79,7 +81,17 @@ public class FreeCamera : MonoBehaviour
 
         }
 
+        move_pos = move_pos * MOVE_SPD;
 
         transform.position = transform.position + move_pos;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return MOVE_SPD;
+    }
+    public void SetMoveSpeed(float spd)
+    {
+        MOVE_SPD = spd;
     }
 }
