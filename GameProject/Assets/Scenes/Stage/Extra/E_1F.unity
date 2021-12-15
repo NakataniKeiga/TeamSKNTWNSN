@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a511f4563601349ace83c56b6a7282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MOVE_SPD: 1
   player: {fileID: 1042158070}
   MAX_X_R: 7.05
   MAX_X_L: -2.75
@@ -4676,6 +4677,14 @@ PrefabInstance:
     - target: {fileID: 7016876420249747784, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016876420249747785, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016876420249747786, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7016876420249747787, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: offset_X
