@@ -121,7 +121,7 @@ public class PlayerAction : MonoBehaviour
                 change = true;
             }
         }
-        if (transform.position.y <0)
+        if (transform.position.y < -20.0f)
         {
             transform.position = start_pos;
         }
