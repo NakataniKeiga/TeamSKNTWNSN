@@ -24,6 +24,14 @@ public class Mirror_switch : MonoBehaviour
     //Unityë§Ç≈êGÇÁÇ»Ç≠ÇƒÇ¢Ç¢
     public bool[] is_REVERSE = new bool[4];
 
+    public Vector3[] RETURN_POS = new Vector3[MOVE_MIRROR_MAX];
+    public Vector3[] RETURN_ROT = new Vector3[MOVE_MIRROR_MAX];
+
+
+
+    GameObject stage;
+    stage_test_script script;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +48,8 @@ public class Mirror_switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        stage = GameObject.Find("stageReturn");
+        script = stage.GetComponent<stage_test_script>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -88,9 +98,21 @@ public class Mirror_switch : MonoBehaviour
                 {
                     if (is_REVERSE[index] == false)
                     {
-                        mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                        mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                        is_REVERSE[index] = true;
+                        if(script.isLight_Flg == true)
+                        {
+                            mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                            Vector3 return_minus = mirror.GetComponent<Transform>().position;
+                            return_minus.x *= -1;
+                            mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + return_minus;
+                        }
+                        else if(script.isLight_Flg == false)
+                        {
+                            mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                            mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+                            is_REVERSE[index] = true;
+                        }
+
+                      is_REVERSE[index] = true;
                     }
                     else if (is_RETURN[index] == true)
                     {
