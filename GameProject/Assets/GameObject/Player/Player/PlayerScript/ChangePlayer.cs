@@ -55,7 +55,6 @@ public class ChangePlayer : MonoBehaviour
                     player.SetActive(true);
                     LightCube.SetActive(false);
                     LightStatus = false;
-
                 }
 
                 else
