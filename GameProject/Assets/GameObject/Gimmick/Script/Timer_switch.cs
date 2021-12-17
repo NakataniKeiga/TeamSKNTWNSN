@@ -22,7 +22,7 @@ public class Timer_switch : MonoBehaviour
     public bool[] is_REVERSE = new bool[START_OBJ_NUM];
     //それぞれの経過時間
     private float[] Timer_count = new float[START_OBJ_NUM];
-
+    private bool is_Input = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +46,8 @@ public class Timer_switch : MonoBehaviour
             //反転フラグがたっているなら処理を行う
             if (is_REVERSE[index] == true)
             {
-              
-                if(Timer_count[index] > 0)  //タイマーカウントが0より大きいなら処理を行う
+
+                if (Timer_count[index] > 0)  //タイマーカウントが0より大きいなら処理を行う
                 {
                     //カウントをマイナス
                     Timer_count[index] -= 1 * Time.deltaTime;
@@ -64,38 +64,53 @@ public class Timer_switch : MonoBehaviour
                 index++;
             }
         }
+
+        InputUpdate();
+
     }
-    private void OnTriggerStay(Collider other)
+
+    void InputUpdate()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (is_Input == true)
         {
-            int index = 0;
-            foreach (GameObject Obj in Move_Object)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (is_REVERSE[index] == false)
+                int index = 0;
+                foreach (GameObject Obj in Move_Object)
                 {
-                    Obj.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                    Obj.GetComponent<Transform>().position = Obj.GetComponent<Transform>().position + SET_POS[index];
-                    is_REVERSE[index] = true;
-                }
-            }
-            index++;
-        }
-        if (Input.GetButtonDown("action_joy"))
-        {
-            int index = 0;
-            foreach (GameObject Obj in Move_Object)
-            {
-                if (is_REVERSE[index] == false)
-                {
-                    Obj.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                    Obj.GetComponent<Transform>().position = Obj.GetComponent<Transform>().position + SET_POS[index];
-                    is_REVERSE[index] = true;
+                    if (is_REVERSE[index] == false)
+                    {
+                        Obj.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                        Obj.GetComponent<Transform>().position = Obj.GetComponent<Transform>().position + SET_POS[index];
+                        is_REVERSE[index] = true;
+                    }
                 }
                 index++;
             }
+            if (Input.GetButtonDown("action_joy"))
+            {
+                int index = 0;
+                foreach (GameObject Obj in Move_Object)
+                {
+                    if (is_REVERSE[index] == false)
+                    {
+                        Obj.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                        Obj.GetComponent<Transform>().position = Obj.GetComponent<Transform>().position + SET_POS[index];
+                        is_REVERSE[index] = true;
+                    }
+                    index++;
+                }
 
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("プレイヤーが当たっている");
+        if (!is_Input)
+        {
+            is_Input = true;
         }
     }
 }
