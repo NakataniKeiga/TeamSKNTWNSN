@@ -32,6 +32,10 @@ public class Mirror_switch : MonoBehaviour
     GameObject stage;
     stage_test_script script;
 
+    //switchアニメーション
+    Animator anim;
+    bool anim_flg = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,10 @@ public class Mirror_switch : MonoBehaviour
             is_REVERSE[index] = false;
 
             index++;
+
+          
         }
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,13 +64,25 @@ public class Mirror_switch : MonoBehaviour
         stage = GameObject.Find("stageReturn");
         script = stage.GetComponent<stage_test_script>();
         InputUpdeta();
+
+        if(anim_flg == true)
+        {
+            //アニメーション
+            anim.SetBool("LeverUp", true);
+        }
+        else if(anim_flg == false)
+        {
+            //アニメーション
+            anim.SetBool("LeverUp", false);
+        }
+
     }
 
     void InputUpdeta()
     {
         if (is_Input == true)
         {
-            if (Input.GetButtonDown("action_joy") || Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetButtonDown("action_joy"))
             {
                 Debug.Log("ボタンを押している");
                 int index = 0;
@@ -92,9 +111,11 @@ public class Mirror_switch : MonoBehaviour
                                 mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
 
                             }
-
+                        
                             is_REVERSE[index] = true;
                             is_Input = false;
+
+                            anim_flg = true;
                         }
                         else if (is_REVERSE[index] == true)
                         {
@@ -113,6 +134,8 @@ public class Mirror_switch : MonoBehaviour
 
                             is_REVERSE[index] = false;
                             is_Input = false;
+
+                            anim_flg = false;
                         }
                     }
                     index++;
