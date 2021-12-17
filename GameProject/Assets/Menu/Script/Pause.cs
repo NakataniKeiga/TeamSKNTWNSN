@@ -4,6 +4,7 @@ using UnityEngine;
 
 //追加したやつ↓
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
@@ -12,10 +13,21 @@ public class Pause : MonoBehaviour
     private GameObject Option2D;
     private GameObject MenuBack2D;
 
+    public Sprite _on;
+    public Sprite _off;
+    public Image image;
+
+    private enum ButtonType
+    {
+        on,
+        off
+    }
+
+    private ButtonType buttontype;
+
     // Start is called before the first frame update
     void Start()
     {
-        MiniMap = GameObject.Find("MiniMap_Canvas");
         Menu2D = GameObject.Find("Menu_Canvas");
         Option2D = GameObject.Find("Option_Canvas");
         MenuBack2D = GameObject.Find("Menu_BackCanvas");
@@ -29,14 +41,20 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //仮
+        if (Input.GetKey(KeyCode.M))
+        {
+            OpenMenu_Move();
+        }
     }
 
     public void OpenMenu_Move()
     {
         Time.timeScale = 0;
 
-        //メニュー画面表示
+        Menu2D = GameObject.Find("Menu").transform.Find("Menu_Canvas").gameObject;
+        Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
+
         Menu2D.gameObject.SetActive(true);
         MenuBack2D.gameObject.SetActive(true);
     }
@@ -45,6 +63,9 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
 
+        Menu2D = GameObject.Find("Menu").transform.Find("Menu_Canvas").gameObject;
+        Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
+
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(false);
         MenuBack2D.gameObject.SetActive(false);
@@ -52,9 +73,11 @@ public class Pause : MonoBehaviour
 
     public void OpenOption_Move()
     {
+        Menu2D = GameObject.Find("Menu").transform.Find("Menu_Canvas").gameObject;
+        Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
+
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(true);
-        MiniMap.gameObject.SetActive(false);
     }
 
     public void StageReset_Move()
@@ -71,18 +94,44 @@ public class Pause : MonoBehaviour
 
     public void MiniMap_Move()
     {
+        MiniMap = GameObject.Find("Menu").transform.Find("Map").gameObject;
+
+        switch (buttontype)
+        {
+            case ButtonType.on:
+                {
+                    image.sprite = _off;
+                    MiniMap.gameObject.SetActive(false);
+                    buttontype = ButtonType.off;
+                }
+                break;
+                    
+            case ButtonType.off:
+                {
+                    image.sprite = _on;
+                    MiniMap.gameObject.SetActive(true);
+                    buttontype = ButtonType.on;
+                }
+                break;
+        }
 
     }
 
     public void MenuBack_Move()
     {
+        Menu2D = GameObject.Find("Menu").transform.Find("Menu_Canvas").gameObject;
+        Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
+
         Menu2D.gameObject.SetActive(true);
         Option2D.gameObject.SetActive(false);
     }
 
     public void InitOption_Move()
     {
-
+        //ミニマップ初期化
+        image.sprite = _on;
+        MiniMap = GameObject.Find("Menu").transform.Find("Map").gameObject;
+        MiniMap.gameObject.SetActive(true);
     }
 
     public void QuitApp()
