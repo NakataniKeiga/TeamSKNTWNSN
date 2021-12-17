@@ -50,6 +50,8 @@ public class ChangePlayer : MonoBehaviour
 
             if (Input.GetButtonDown("Light"))
             {
+                Debug.Log("ライト状態ボタンおした。");
+
                 if (LightCube.activeSelf)
                 {
                     player.SetActive(true);
