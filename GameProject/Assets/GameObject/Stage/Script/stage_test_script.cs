@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class stage_test_script : MonoBehaviour
 {
@@ -27,6 +28,15 @@ public class stage_test_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SceneManager.GetActiveScene().name == "PlayStage5")
+        {
+            //ステージ5は常に反転状態で光になれるので　反転処理をさせない＆常に光状態
+            isLight_Flg = true;
+            return;
+        }
+
+
+
         if(count > 0)
         {
             count -= 1 * Time.deltaTime;

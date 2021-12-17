@@ -94,22 +94,22 @@ public class PlayerAction : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 change = false;
-                Debug.Log("‰E");
+                Debug.Log("KEY_RightArrow");
             }
             if (Input.GetKey(KeyCode.D))
             {
                 change = false;
-                Debug.Log("‰E");
+                Debug.Log("KEY_D");
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 change = true;
-                Debug.Log("¶");
+                Debug.Log("KEY_LeftArrow");
             }
             if (Input.GetKey(KeyCode.A))
             {
                 change = true;
-                Debug.Log("¶");
+                Debug.Log("KEY_A");
             }
 
             if (Input.GetAxis("joystick_L_H") > 0)
@@ -121,7 +121,7 @@ public class PlayerAction : MonoBehaviour
                 change = true;
             }
         }
-        if (transform.position.y <0)
+        if (transform.position.y < -20.0f)
         {
             transform.position = start_pos;
         }

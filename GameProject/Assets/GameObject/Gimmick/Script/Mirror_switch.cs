@@ -24,6 +24,14 @@ public class Mirror_switch : MonoBehaviour
     //Unity側で触らなくていい
     public bool[] is_REVERSE = new bool[4];
 
+    public Vector3[] RETURN_ROT = new Vector3[MOVE_MIRROR_MAX];
+    public Vector3[] RETURN_POS = new Vector3[MOVE_MIRROR_MAX];
+
+    private bool is_Input = false;
+
+    GameObject stage;
+    stage_test_script script;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +41,12 @@ public class Mirror_switch : MonoBehaviour
         {
             START_ROT[index] = mirror.GetComponent<Transform>().eulerAngles;
             START_POS[index] = mirror.GetComponent<Transform>().position;
+
+            RETURN_ROT[index] = mirror.GetComponent<Transform>().eulerAngles;
+            RETURN_POS[index] = mirror.GetComponent<Transform>().position;
+
+            is_REVERSE[index] = false;
+
             index++;
         }
     }
@@ -40,69 +54,80 @@ public class Mirror_switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        stage = GameObject.Find("stageReturn");
+        script = stage.GetComponent<stage_test_script>();
+        InputUpdeta();
+    }
+
+    void InputUpdeta()
+    {
+        if (is_Input == true)
+        {
+            if (Input.GetButtonDown("action_joy") || Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("ボタンを押している");
+                int index = 0;
+                foreach (GameObject mirror in Move_mirror)
+                {
+
+                    if (is_RETURN[index] == false) // 反復しないでSETした値をボタンを推すたびに加算し続ける処理
+                    {
+                        mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                        mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+                        is_Input = false;
+                    }
+                    else if (is_RETURN[index] == true) // 反復をしてSETした値を加算した次のボタンの操作で元の座標、角度に戻す処理
+                    {
+                        if (is_REVERSE[index] == false)
+                        {                           
+                            if (script.isLight_Flg == true)//反転している状態
+                            {
+                                mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x * -1, SET_ROT[index].y, SET_ROT[index].z);
+                                mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+
+                            }
+                            else if (script.isLight_Flg == false)//反転していない状態
+                            {
+                                mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                                mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+
+                            }
+
+                            is_REVERSE[index] = true;
+                            is_Input = false;
+                        }
+                        else if (is_REVERSE[index] == true)
+                        {
+                            if (script.isLight_Flg == true)//反転している状態
+                            {
+                                mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
+                                Vector3 pos = START_POS[index];
+                                pos.x *= -1;
+                                mirror.GetComponent<Transform>().position = pos;
+                            }
+                            else if (script.isLight_Flg == false)//反転していない状態
+                            {
+                                mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
+                                mirror.GetComponent<Transform>().position = START_POS[index];
+                            }
+
+                            is_REVERSE[index] = false;
+                            is_Input = false;
+                        }
+                    }
+                    index++;
+                }
+
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        Debug.Log("プレイヤーが当たっている");
+        if (!is_Input)
         {
-            int index = 0;
-            foreach (GameObject mirror in Move_mirror)
-            {
-                if (is_RETURN[index] == false)
-                {
-                    mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                    mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                }
-                else if(is_RETURN[index] == true)
-                {
-                    if(is_REVERSE[index] == false)
-                    {
-                        mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                        mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                        is_REVERSE[index] = true;
-                    }
-                    else if (is_RETURN[index] == true)
-                    {
-                        mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
-                        mirror.GetComponent<Transform>().position = START_POS[index];
-
-                         is_REVERSE[index] = false;
-                    }
-                }
-                index++;
-            }
-        }
-        if (Input.GetButtonDown("action_joy"))
-        {
-            int index = 0;
-            foreach (GameObject mirror in Move_mirror)
-            {
-                if (is_RETURN[index] == false)
-                {
-                    mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                    mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                }
-                else if (is_RETURN[index] == true)
-                {
-                    if (is_REVERSE[index] == false)
-                    {
-                        mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                        mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                        is_REVERSE[index] = true;
-                    }
-                    else if (is_RETURN[index] == true)
-                    {
-                        mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
-                        mirror.GetComponent<Transform>().position = START_POS[index];
-
-                        is_REVERSE[index] = false;
-                    }
-                }
-                index++;
-            }
-
+            is_Input = true;
         }
     }
 }

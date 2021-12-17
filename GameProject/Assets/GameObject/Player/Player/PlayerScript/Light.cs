@@ -67,7 +67,7 @@ public class Light : MonoBehaviour
 
             if (targetObj.activeSelf == false)
             {
-                rb.AddForce(new Vector3(0, 0, 0));
+                //rb.AddForce(new Vector3(0, 0, 0));
             }
 
 
