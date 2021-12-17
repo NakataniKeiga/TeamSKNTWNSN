@@ -9,6 +9,8 @@ public class ChangePlayer : MonoBehaviour
     public GameObject player;
     public GameObject LightCube;
 
+    public float LightPos_Y = 2f;
+
     GameObject stage;
     stage_test_script StageScript;
 
@@ -45,11 +47,21 @@ public class ChangePlayer : MonoBehaviour
 
         //    }
         //}
+
+        //Transform playerPos = player.transform;
+
+        //Vector3 localPos = playerPos.localPosition;
+        //localPos.y = +1.0f;
+       
+
+
         if (StageScript.isLight_Flg == true)
         {
 
             if (Input.GetButtonDown("Light"))
             {
+                Debug.Log("ライト状態ボタンおした。");
+
                 if (LightCube.activeSelf)
                 {
                     player.SetActive(true);
@@ -62,6 +74,12 @@ public class ChangePlayer : MonoBehaviour
                     player.SetActive(false);
                     LightCube.SetActive(true);
                     LightStatus = true;
+                    Vector3 pos = player.transform.position;
+
+                    pos.y += LightPos_Y;
+
+                    player.transform.position = pos;
+
                     LightCube.transform.position = player.transform.position;
 
                 }

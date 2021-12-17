@@ -44,6 +44,8 @@ public class Mirror_switch : MonoBehaviour
             RETURN_ROT[index] = mirror.GetComponent<Transform>().eulerAngles;
             RETURN_POS[index] = mirror.GetComponent<Transform>().position;
 
+            is_REVERSE[index] = false;
+
             index++;
         }
     }
@@ -87,12 +89,64 @@ public class Mirror_switch : MonoBehaviour
         //        index++;
         //    }
         //}
-        if (Input.GetButtonDown("action_joy")|| Input.GetKeyDown(KeyCode.Q))
+        //if (Input.GetButtonDown("action_joy") || Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    int index = 0;
+        //    foreach (GameObject mirror in Move_mirror)
+        //    {
+                
+        //        if (is_RETURN[index] == false) // 反復しないでSETした値をボタンを推すたびに加算し続ける処理
+        //        {
+        //            mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+        //            mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+        //        }
+        //        else if (is_RETURN[index] == true)　// 反復をしてSETした値を加算した次のボタンの操作で元の座標、角度に戻す処理
+        //        {
+        //            if (is_REVERSE[index] == false)
+        //            {
+        //                //メモ
+        //                //反転しても親子関係の設定があるため、鏡の座標自体は変わってないから　鏡の角度を反転してるかどうかを確認して調整するだけでよいかも？
+                      
+
+        //                if(script.isLight_Flg == true)//反転している状態
+        //                {
+        //                    mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x * -1, SET_ROT[index].y, SET_ROT[index].z);
+        //                    mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+
+
+        //                    Vector3 return_minus = mirror.GetComponent<Transform>().position;
+        //                    return_minus.x *= -1;
+        //                    mirror.GetComponent<Transform>().position = return_minus;
+
+        //                }
+        //                else if(script.isLight_Flg == false)//反転していない状態
+        //                {
+        //                    mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+        //                    mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+
+        //                }
+
+        //              is_REVERSE[index] = true;
+        //            }
+        //            else if (is_REVERSE[index] == true)
+        //            {
+        //                mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
+        //                mirror.GetComponent<Transform>().position = START_POS[index];
+
+        //                is_REVERSE[index] = false;
+        //            }
+        //        }
+        //        index++;
+        //    }
+
+        //}
+
+        if (Input.GetButtonDown("action_joy") || Input.GetKeyDown(KeyCode.Q))
         {
             int index = 0;
             foreach (GameObject mirror in Move_mirror)
             {
-                
+
                 if (is_RETURN[index] == false) // 反復しないでSETした値をボタンを推すたびに加算し続ける処理
                 {
                     mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
@@ -104,32 +158,37 @@ public class Mirror_switch : MonoBehaviour
                     {
                         //メモ
                         //反転しても親子関係の設定があるため、鏡の座標自体は変わってないから　鏡の角度を反転してるかどうかを確認して調整するだけでよいかも？
-                      
 
-                        if(script.isLight_Flg == true)
+
+                        if (script.isLight_Flg == true)//反転している状態
                         {
-                            //mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x * -1, SET_ROT[index].y, SET_ROT[index].z);
-                            //mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+                            mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x * -1, SET_ROT[index].y, SET_ROT[index].z);
+                            mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
 
-
-                            //Vector3 return_minus = mirror.GetComponent<Transform>().position;
-                            //return_minus.x *= -1;
-                            //mirror.GetComponent<Transform>().position = return_minus;
-                            
                         }
-                        else if(script.isLight_Flg == false)
+                        else if (script.isLight_Flg == false)//反転していない状態
                         {
-                            //mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
-                            //mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
-                            
+                            mirror.GetComponent<Transform>().Rotate(SET_ROT[index].x, SET_ROT[index].y, SET_ROT[index].z);
+                            mirror.GetComponent<Transform>().position = mirror.GetComponent<Transform>().position + SET_POS[index];
+
                         }
 
-                      is_REVERSE[index] = true;
+                        is_REVERSE[index] = true;
                     }
                     else if (is_REVERSE[index] == true)
                     {
-                        mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
-                        mirror.GetComponent<Transform>().position = START_POS[index];
+                        if (script.isLight_Flg == true)//反転している状態
+                        {
+                            mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
+                            Vector3 pos = START_POS[index];
+                            pos.x *= -1;
+                            mirror.GetComponent<Transform>().position = pos;
+                        }
+                        else if (script.isLight_Flg == false)//反転していない状態
+                        {
+                            mirror.GetComponent<Transform>().eulerAngles = START_ROT[index];
+                            mirror.GetComponent<Transform>().position = START_POS[index];
+                        }
 
                         is_REVERSE[index] = false;
                     }
