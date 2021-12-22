@@ -6,13 +6,18 @@ using UnityEngine.UI;
 
 public class Volume_Slider : MonoBehaviour
 {
-    Slider VolumeSlider;
+    public Slider VolumeSlider;
+    AudioSource audioSource;
+
     int maxValue;
     int nowValue;
 
     // Use this for initialization
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        VolumeSlider.onValueChanged.AddListener(value => this.audioSource.volume = value);
+
         VolumeSlider = GetComponent<Slider>();
 
         maxValue = 100;
