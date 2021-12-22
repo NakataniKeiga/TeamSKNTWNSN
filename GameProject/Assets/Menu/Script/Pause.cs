@@ -132,6 +132,9 @@ public class Pause : MonoBehaviour
         image.sprite = _on;
         MiniMap = GameObject.Find("Menu").transform.Find("Map").gameObject;
         MiniMap.gameObject.SetActive(true);
+
+        //ƒ{ƒŠƒ…[ƒ€‰Šú‰»
+
     }
 
     public void QuitApp()
