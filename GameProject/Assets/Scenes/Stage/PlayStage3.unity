@@ -2436,6 +2436,7 @@ MonoBehaviour:
   LightStatus: 0
   player: {fileID: 272477645}
   LightCube: {fileID: 1341910500}
+  LightPos_Y: 2
 --- !u!4 &266153263
 Transform:
   m_ObjectHideFlags: 0
@@ -2463,11 +2464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.4
+      value: -53.5
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 97.5
+      value: 49.4
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3474,10 +3475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f9064abe204bc4390bd3167fc82e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttontype: 0
-  _on: {fileID: -6902528088763441227, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  _off: {fileID: 3008645953396148453, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  image: {fileID: 392647623}
 --- !u!114 &392647622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10110,9 +10107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231f9474f6cd1de40a69ce1550a01c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _on: {fileID: -6766841425554008925, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  _off: {fileID: -6067707223996300969, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  image: {fileID: 1059806423}
 --- !u!114 &1059806422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17097,6 +17091,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f6d6f3a54b19844bb5f3833cf349c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _on: {fileID: 0}
+  _off: {fileID: 0}
+  image: {fileID: 0}
 --- !u!65 &1800926887
 BoxCollider:
   m_ObjectHideFlags: 0
