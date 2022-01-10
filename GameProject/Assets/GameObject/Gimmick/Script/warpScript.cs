@@ -25,7 +25,8 @@ public class warpScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // InputUpdate();
+        // InputUpdate();
+        next_pos = next_port.GetComponent<Transform>().position;
     }
 
     void InputUpdate()
