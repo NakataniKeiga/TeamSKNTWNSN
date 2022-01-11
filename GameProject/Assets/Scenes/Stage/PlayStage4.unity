@@ -13478,6 +13478,7 @@ MonoBehaviour:
   LightStatus: 0
   player: {fileID: 1127321184}
   LightCube: {fileID: 323072854}
+  LightPos_Y: 2
 --- !u!4 &1187145385
 Transform:
   m_ObjectHideFlags: 0
@@ -18120,6 +18121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f6d6f3a54b19844bb5f3833cf349c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _on: {fileID: 0}
+  _off: {fileID: 0}
+  image: {fileID: 0}
 --- !u!65 &1585088468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20229,10 +20233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f9064abe204bc4390bd3167fc82e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttontype: 0
-  _on: {fileID: -6902528088763441227, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  _off: {fileID: 3008645953396148453, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  image: {fileID: 1772075350}
 --- !u!114 &1772075349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20752,6 +20752,7 @@ MonoBehaviour:
   LightStatus: 0
   player: {fileID: 1127321184}
   LightCube: {fileID: 0}
+  LightPos_Y: 2
 --- !u!4 &1827724731
 Transform:
   m_ObjectHideFlags: 0
@@ -21680,11 +21681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: 49.6
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 138.6
       objectReference: {fileID: 0}
     - target: {fileID: 3371496346991658046, guid: 2c01f7536e3d278448f8bf85f63bacad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22196,9 +22197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231f9474f6cd1de40a69ce1550a01c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _on: {fileID: -6766841425554008925, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  _off: {fileID: -6067707223996300969, guid: e5e1dbf0f4c507f4ea7ac9865aed4dfb, type: 3}
-  image: {fileID: 2000294078}
 --- !u!114 &2000294077
 MonoBehaviour:
   m_ObjectHideFlags: 0
