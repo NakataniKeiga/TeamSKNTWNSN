@@ -24,7 +24,8 @@ public class StartButton : MonoBehaviour
         }
 
         /// もし枠がオプションにあるなら(あとから変える)
-        else if(StageManager.m_instance.m_select == "Option"){
+        else if(StageManager.m_instance.m_select != "StageSelect")
+        {
             m_animator.SetBool("ShineFlg", false); // ゲームスタートボタンは光らないように
         }
     }
