@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionButton : MonoBehaviour
+public class ExstageButton : MonoBehaviour
 {
     // アニメータ取得
     private Animator m_animator;
@@ -18,15 +18,15 @@ public class OptionButton : MonoBehaviour
     void Update()
     {
         /// もし枠がゲームスタートにあるなら(今は仮でモック。あとから変える)
-        if (StageManager.m_instance.m_select != "Option")
+        if (StageManager.m_instance.m_select != "E_1F")
         {
-            m_animator.SetBool("ShineFlg", false);  // オプションボタンは光らない
+            m_animator.SetBool("Exflg", false);  // エクストラボタンは光らない
         }
 
         /// もし枠がオプションにあるなら(あとから変える)
-        else if (StageManager.m_instance.m_select == "Option")
+        else if (StageManager.m_instance.m_select == "E_1F")
         {
-            m_animator.SetBool("ShineFlg", true); // オプションボタンは光る
+            m_animator.SetBool("Exflg", true);   // エクストラボタンは光る
         }
     }
 }

@@ -26,12 +26,18 @@ public class FrameButton : MonoBehaviour
         /// yPlayz‚Ì‚Ì˜g‚ÌˆÊ’u
         if(StageManager.m_instance.m_select == "StageSelect")
         {
-            Pos.x = -3.0f;
+            Pos.x = -6.0f;
+        }
+
+        /// yƒGƒNƒXƒgƒ‰z‚Ì‚Ì˜g‚ÌˆÊ’u
+        else if (StageManager.m_instance.m_select == "E_1F")
+        {
+            Pos.x = 0.0f;
         }
 
         /// yƒIƒvƒVƒ‡ƒ“z‚Ì‚Ì˜g‚ÌˆÊ’u
         else if(StageManager.m_instance.m_select == "Option"){
-            Pos.x = 3.0f;
+            Pos.x = 6.0f;
         }
 
         /// ŒvZŒ‹‰Ê‚ğ‚à‚Æ‚É–ß‚µAˆÊ’u‚ğ”½‰f‚³‚¹‚é

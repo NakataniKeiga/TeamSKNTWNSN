@@ -19,26 +19,26 @@ public class TitleScene : MonoBehaviour
     void Update()
     {
         /// ここで枠の移動範囲を決めている---------------------
-        /// 【もし右が押された または 左スティックが右に倒された】 かつ【2以下】の時
-        if (Input.GetKeyDown(KeyCode.RightArrow) || 0 < Input.GetAxisRaw("joystick_L_H")){
-
-            /// 番号を足す
-            SelectFrame++;
-
+        /// 【もし右が押された または 左スティックが右に倒された】 かつ【3以下】の時
+        if (Input.GetKeyDown(KeyCode.RightArrow)  || 0 < Input.GetAxisRaw("joystick_L_H"))
+        {
+            SelectFrame++; /// 番号を足す
+            
             /// もし3以上になったら、戻す
-            if(SelectFrame >= 3){
-                SelectFrame = 2;
+            if (SelectFrame >= 21){
+                SelectFrame = 20;
             }
         }
 
-        /// 【もし左が押された または 右スティックが左に倒された】かつ【1以上】の時
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || 0 > Input.GetAxisRaw("joystick_L_H")){
-
+        // 【もし左が押された または 右スティックが左に倒された】かつ【1以上】の時
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || 0 > Input.GetAxisRaw("joystick_L_H"))
+        {
             /// 部屋番号を引く
             SelectFrame--;
 
             /// もし0以下になったら、戻す
-            if(SelectFrame <= 0){
+            if (SelectFrame <= 0)
+            {
                 SelectFrame = 1;
             }
         }
@@ -46,14 +46,22 @@ public class TitleScene : MonoBehaviour
 
         /// ここで番号を見て、枠の行き先を決める-----------------
         /// Playにあるなら
-        if(SelectFrame == 1){
+        if (SelectFrame == 1){
 
             /// 枠をプレイに移動(今は仮でモックステージ)
             StageManager.m_instance.m_select = "StageSelect";
         }
 
+        /// エクストラにあるなら
+        if(SelectFrame == 10){
+
+            /// 枠をエクストラに移動
+            StageManager.m_instance.m_select = "E_1F";
+        }
+
         /// オプションにあるなら
-        if(SelectFrame == 2){
+        if (SelectFrame == 20)
+        {
 
             /// 枠をオプションに移動(オプション出来たら名前をそれに合わせる。今は仮のOption)
             StageManager.m_instance.m_select = "Option";
@@ -64,7 +72,7 @@ public class TitleScene : MonoBehaviour
         {
 
             /// シーン移動
-            SceneManager.LoadScene("StageSelect");
+            SceneManager.LoadScene("Play");
         }
 
         //// エンターキーでPlayシーンへ(今は仮で)
