@@ -11,6 +11,9 @@ public class Light : MonoBehaviour
     public bool Lightstatus = false; //ライト状態
     public bool direction = true;//向いている方向 //ture：右   //false：左
 
+    public float LimitSpeed = 100;
+
+
     private Vector3 start_pos;
     GameObject lightcamera;
 
@@ -19,6 +22,10 @@ public class Light : MonoBehaviour
 
     GameObject stage;
     stage_test_script StageScript;
+
+    //光状態の上の判定をとるために必要
+    GameObject CollisionObject;
+    Collisiondetection collisonobject;
 
     Vector3 PlayerPos;
     Vector3 cameraPos;
@@ -35,6 +42,10 @@ public class Light : MonoBehaviour
 
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
+
+        //光状態上
+        CollisionObject = GameObject.Find("CollisionLight");
+        collisonobject = CollisionObject.GetComponent<Collisiondetection>();
 
         lightcamera = GameObject.Find("LightCamera");
 
@@ -115,15 +126,18 @@ public class Light : MonoBehaviour
 
         }
 
-        
 
+        //移動制限
+        if (rb.velocity.magnitude > LimitSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x / 1.1f, 0, 0);
+        }
 
 
     }
 
     void FixedUpdate()
     {
-
 
         if (Input.GetAxis("joystick_L_H") < 0)
         {
@@ -143,25 +157,39 @@ public class Light : MonoBehaviour
 
     }
 
+    
 
     void OnCollisionEnter(Collision coll)
     {
+
         if (coll.gameObject.tag == "Mirror")//鏡と当たった時
         {
             //if (rb.useGravity == false)
             //{
-                Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
+                  Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
                 this.rb.velocity = refrectVec;
 
         }
         else
         {
+            if (collisonobject.UpCollision == true)
+            {
+
+
+            }
+            else
+            {
+
             ischange = false;
             script.LightStatus = false;
 
             targetObj.SetActive(false);
             targetobject.transform.position = targetObj.transform.position;
+
+            }
+            
         }
+
 
 
         //if (coll.gameObject.tag == "Ground")

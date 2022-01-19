@@ -14,6 +14,10 @@ public class ChangePlayer : MonoBehaviour
     GameObject stage;
     stage_test_script StageScript;
 
+    GameObject LightVec;
+    Light LightScript;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +25,16 @@ public class ChangePlayer : MonoBehaviour
 
         stage = GameObject.Find("stageReturn");
         StageScript = stage.GetComponent<stage_test_script>();
-        
 
+
+        LightVec = GameObject.Find("LightBall");
+        LightScript = LightVec.GetComponent<Light>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //if (Input.GetKeyDown(KeyCode.Q)) ;
         //{
         //    if (LightCube.activeSelf)
@@ -52,7 +59,7 @@ public class ChangePlayer : MonoBehaviour
 
         //Vector3 localPos = playerPos.localPosition;
         //localPos.y = +1.0f;
-       
+
 
 
         if (StageScript.isLight_Flg == true)
@@ -68,7 +75,6 @@ public class ChangePlayer : MonoBehaviour
                     LightCube.SetActive(false);
                     LightStatus = false;
                 }
-
                 else
                 {
                     player.SetActive(false);
@@ -82,11 +88,13 @@ public class ChangePlayer : MonoBehaviour
 
                     LightCube.transform.position = player.transform.position;
 
+
                 }
             }
 
             if (LightCube.active == false)
             {
+                LightCube.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 player.SetActive(true);
 
             }
