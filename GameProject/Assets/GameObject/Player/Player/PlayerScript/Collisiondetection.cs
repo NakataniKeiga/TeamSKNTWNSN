@@ -26,7 +26,7 @@ public class Collisiondetection : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
         UpCollision = false;
-        if (coll.gameObject.tag == "Ground")
+        if (coll.gameObject.tag != "Mirror")
         {
             UpCollision = true;
             Player.transform.position = Coll.transform.position;
