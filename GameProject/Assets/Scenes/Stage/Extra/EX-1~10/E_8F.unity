@@ -3914,10 +3914,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435620572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbb3109def8c824fa47119a3ebe14a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f977769cf5d96f4ab98d9cd5d14b0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key_Number: 0
+  ExKeyNumber: 9
 --- !u!1001 &1439177055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4957,6 +4957,26 @@ PrefabInstance:
     - target: {fileID: 4834144432746825726, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.y
+      value: 0.84923714
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.z
+      value: 2.5237963
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.x
+      value: 0.010665033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.y
+      value: -0.054960452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.z
+      value: -0.855439
       objectReference: {fileID: 0}
     - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_IsTrigger

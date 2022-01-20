@@ -3637,6 +3637,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1241926776}
     m_Modifications:
+    - target: {fileID: 3677902671267824770, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+      propertyPath: m_Size.z
+      value: 1.6698753
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677902671267824770, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+      propertyPath: m_Center.x
+      value: -0.1239748
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677902671267824770, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+      propertyPath: m_Center.y
+      value: 0.046997305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677902671267824770, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+      propertyPath: m_Center.z
+      value: -0.65086263
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677902671267824770, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5222212056441733332, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
       propertyPath: m_Name
       value: Wooden_Door
@@ -3699,6 +3719,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+--- !u!1 &1440650721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5222212056441733332, guid: 6d7a739afa8840e47b2269073a4ea42e, type: 3}
+  m_PrefabInstance: {fileID: 1440650720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1440650722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440650721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f977769cf5d96f4ab98d9cd5d14b0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExKeyNumber: 2
 --- !u!1001 &1470641728
 PrefabInstance:
   m_ObjectHideFlags: 0
