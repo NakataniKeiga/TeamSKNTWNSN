@@ -18,13 +18,13 @@ public class ExstageButton : MonoBehaviour
     void Update()
     {
         /// もし枠がゲームスタートにあるなら(今は仮でモック。あとから変える)
-        if (StageManager.m_instance.m_select != "E_1F")
+        if (StageManager.m_instance.ExFlg == false)
         {
             m_animator.SetBool("Exflg", false);  // エクストラボタンは光らない
         }
 
         /// もし枠がオプションにあるなら(あとから変える)
-        else if (StageManager.m_instance.m_select == "E_1F")
+        else if (StageManager.m_instance.ExFlg == true)
         {
             m_animator.SetBool("Exflg", true);   // エクストラボタンは光る
         }

@@ -51,6 +51,33 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage/Extra/EX-1~10/E_1F.unity
     guid: 59994aa9ad4723a449ac70fc48a337be
   - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_2F.unity
+    guid: cdd1be4f196a71f418ea3f59d4577334
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_3F.unity
+    guid: 962ea73e1cbd896409a6cd9ed2d7f658
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_4F.unity
+    guid: 4dc864d90509349469cc732ccce3637b
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_5F.unity
+    guid: 557e457b7888dfb4c96f0a66a0b0543e
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_6F.unity
+    guid: c4a879cfa25bed6409a2a8cb97f2ff2e
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_7F.unity
+    guid: 23deb0853142be945b3941101a332fc4
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_8F.unity
+    guid: bf3630c27e8155745b896ffdff8b646b
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_9F.unity
+    guid: b0cfef96c839f8f498ab6b61b98cb503
+  - enabled: 1
+    path: Assets/Scenes/Stage/Extra/EX-1~10/E_10F.unity
+    guid: e1c1cbb1edd986449acdb869d04a2412
+  - enabled: 1
     path: Assets/Scenes/ResultScene.unity
     guid: 8f8f09e5a796e6046a6eb3c8805d9a24
   m_configObjects: {}
