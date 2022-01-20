@@ -13,6 +13,7 @@ public class TitleScene : MonoBehaviour
     {
         /// 枠をリセットする(最初はPlayにいてほしい)
         StageManager.m_instance.m_select = "Play";
+        SelectFrame = 1;
     }
 
     // Update is called once per frame
@@ -25,8 +26,8 @@ public class TitleScene : MonoBehaviour
             SelectFrame++; /// 番号を足す
             
             /// もし3以上になったら、戻す
-            if (SelectFrame >= 21){
-                SelectFrame = 20;
+            if (SelectFrame >= 31){
+                SelectFrame = 30;
             }
         }
 
@@ -48,23 +49,24 @@ public class TitleScene : MonoBehaviour
         /// Playにあるなら
         if (SelectFrame == 1){
 
-            /// 枠をプレイに移動(今は仮でモックステージ)
-            StageManager.m_instance.m_select = "StageSelect";
+            StageManager.m_instance.m_select = "StageSelect"; /// 枠をプレイに移動(今は仮でモックステージ)
+            StageManager.m_instance.ExFlg = false;            /// Exの場所ではないのでfalse
         }
 
         /// エクストラにあるなら
-        if(SelectFrame == 10){
+        if(SelectFrame == 15){
 
-            /// 枠をエクストラに移動
-            StageManager.m_instance.m_select = "E_1F";
+            StageManager.m_instance.m_select = "E_1F"; /// 枠をエクストラに移動 (行先変えるならここを変更)
+            StageManager.m_instance.ExFlg = true;      /// Exの場所なのでtrue
         }
 
         /// オプションにあるなら
-        if (SelectFrame == 20)
+        if (SelectFrame == 30)
         {
 
             /// 枠をオプションに移動(オプション出来たら名前をそれに合わせる。今は仮のOption)
             StageManager.m_instance.m_select = "Option";
+            StageManager.m_instance.ExFlg = false;     /// Exの場所ではないのでfalse
         }
 
         /// 移動する準備(仮エンター押されたら移動)
@@ -74,12 +76,5 @@ public class TitleScene : MonoBehaviour
             /// シーン移動
             SceneManager.LoadScene("Play");
         }
-
-        //// エンターキーでPlayシーンへ(今は仮で)
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    // シーン切り替えにLoadScene関数を使う
-        //    SceneManager.LoadScene("MocStage4");
-        //}
     }
 }
