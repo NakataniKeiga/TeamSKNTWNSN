@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //　UIの追加部分　========
+    public GameObject UI_ctrl;
+    //========================
 
     float x;
     float z;
@@ -42,10 +45,14 @@ public class Player : MonoBehaviour
         rigidbody_.constraints = RigidbodyConstraints.FreezeRotation;
         maincamera = GameObject.Find("Main Camera");
 
+
+        //　UIの追加部分　==================
+        UI_ctrl = GameObject.Find("UI");
+        //==================================
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
 
         if (script.ischange == false)
@@ -135,6 +142,13 @@ public class Player : MonoBehaviour
         {
             isTP_2 = true;
         }
+
+        //　UIの追加部分　================================
+        if (collision.gameObject.name == "Switch_Box")
+        {
+            UI_ctrl.GetComponent<UI_Move>().Grass_Move();
+        }
+        //================================================
     }
     private void OnCollisionExit(Collision collision)
     {
