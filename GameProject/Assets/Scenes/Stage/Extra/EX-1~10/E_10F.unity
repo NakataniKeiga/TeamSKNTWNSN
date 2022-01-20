@@ -169,7 +169,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1283818124}
   lightCamera: {fileID: 1284560675}
   freeCamera: {fileID: 9252332}
-  lightball: {fileID: 165888489}
+  lightball: {fileID: 0}
 --- !u!1 &9252332
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,27 +610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 3962289336804707839, guid: c5949d3c217a5e24a9b1129eed6cc267, type: 3}
---- !u!1 &165888489 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 405539896178839142, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
-  m_PrefabInstance: {fileID: 249050853}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &165888490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165888489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0be54a5086919e4e815e364c105c4f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectObject: {fileID: 8959105476083482333, guid: c47313f4517ce6140b46d92e28bea846, type: 3}
-  deleteTime: 1
-  offset_X: 0
-  offset_Y: 0
 --- !u!1001 &192988742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1927,7 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightStatus: 0
   player: {fileID: 911893606}
-  LightCube: {fileID: 165888489}
+  LightCube: {fileID: 0}
   LightPos_Y: 2
 --- !u!1001 &861620380
 PrefabInstance:
@@ -2306,6 +2285,26 @@ PrefabInstance:
     - target: {fileID: 4834144432746825726, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.y
+      value: 0.84923714
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.z
+      value: 2.3931887
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.x
+      value: 0.01066498
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.y
+      value: -0.054960452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.z
+      value: -0.79013324
       objectReference: {fileID: 0}
     - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_IsTrigger
@@ -3151,7 +3150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284560675
 GameObject:
@@ -4552,10 +4551,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840344229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbb3109def8c824fa47119a3ebe14a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f977769cf5d96f4ab98d9cd5d14b0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key_Number: 0
+  ExKeyNumber: 11
 --- !u!1001 &1844032320
 PrefabInstance:
   m_ObjectHideFlags: 0
