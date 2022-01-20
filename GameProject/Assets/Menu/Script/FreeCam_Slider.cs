@@ -16,7 +16,7 @@ public class FreeCam_Slider : MonoBehaviour
         freecamSlider = GetComponent<Slider>();
 
         maxSpeed = 3;
-        nowSpeed = GetComponent<FreeCamera>().GetMoveSpeed();
+        nowSpeed = 1;
 
 
         //スライダーの最大値の設定

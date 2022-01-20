@@ -11,7 +11,6 @@ public class Pause : MonoBehaviour
     private GameObject MiniMap;
     private GameObject Menu2D;
     private GameObject Option2D;
-    private GameObject MenuBack2D;
 
     public Sprite _on;
     public Sprite _off;
@@ -28,14 +27,12 @@ public class Pause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Menu2D = GameObject.Find("Menu_Canvas");
-        Option2D = GameObject.Find("Option_Canvas");
-        MenuBack2D = GameObject.Find("Menu_BackCanvas");
+        Menu2D = GameObject.Find("Menu").transform.Find("Menu_Canvas").gameObject;
+        Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
 
         //UI‚ð”ñ•\Ž¦‚É
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(false);
-        MenuBack2D.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,7 +53,7 @@ public class Pause : MonoBehaviour
         Option2D = GameObject.Find("Menu").transform.Find("Option_Canvas").gameObject;
 
         Menu2D.gameObject.SetActive(true);
-        MenuBack2D.gameObject.SetActive(true);
+        Option2D.gameObject.SetActive(false);
     }
 
     public void PlayBack_Move()
@@ -68,7 +65,6 @@ public class Pause : MonoBehaviour
 
         Menu2D.gameObject.SetActive(false);
         Option2D.gameObject.SetActive(false);
-        MenuBack2D.gameObject.SetActive(false);
     }
 
     public void OpenOption_Move()
