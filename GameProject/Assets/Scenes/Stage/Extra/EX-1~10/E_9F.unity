@@ -603,7 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightStatus: 0
   player: {fileID: 1631821777}
-  LightCube: {fileID: 397842987}
+  LightCube: {fileID: 0}
   LightPos_Y: 2
 --- !u!4 &274476803
 Transform:
@@ -910,27 +910,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2203307360731579239, guid: 54c09519fc2ecf343a46b16f8fb95e2a, type: 3}
   m_PrefabInstance: {fileID: 145206732}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &397842987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 405539896178839142, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
-  m_PrefabInstance: {fileID: 1409125820}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &397842988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397842987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0be54a5086919e4e815e364c105c4f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectObject: {fileID: 8959105476083482333, guid: c47313f4517ce6140b46d92e28bea846, type: 3}
-  deleteTime: 1
-  offset_X: 0
-  offset_Y: 0
 --- !u!1 &416434174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,7 +1895,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &655315759 stripped
 Transform:
@@ -2396,6 +2375,26 @@ PrefabInstance:
     - target: {fileID: 4834144432746825726, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.y
+      value: 0.84923714
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Size.z
+      value: 1.9218681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.x
+      value: 0.01066498
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.y
+      value: -0.054960452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
+      propertyPath: m_Center.z
+      value: -0.55447453
       objectReference: {fileID: 0}
     - target: {fileID: 5675143542070069657, guid: 2570adfb5fea3cf4eba96e009e17b638, type: 3}
       propertyPath: m_IsTrigger
@@ -3636,7 +3635,7 @@ MonoBehaviour:
   mainCamera: {fileID: 654014912}
   lightCamera: {fileID: 1551909968}
   freeCamera: {fileID: 639035063}
-  lightball: {fileID: 397842987}
+  lightball: {fileID: 0}
 --- !u!4 &1481162040
 Transform:
   m_ObjectHideFlags: 0
@@ -4468,10 +4467,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927560605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbb3109def8c824fa47119a3ebe14a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f977769cf5d96f4ab98d9cd5d14b0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key_Number: 0
+  ExKeyNumber: 10
 --- !u!114 &1927560607
 MonoBehaviour:
   m_ObjectHideFlags: 0
