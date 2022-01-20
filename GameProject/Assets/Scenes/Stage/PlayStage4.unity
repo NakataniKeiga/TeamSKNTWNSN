@@ -6267,6 +6267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7396225375514621501, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1127321184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
 --- !u!1001 &522111547
@@ -13204,7 +13208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2687651398579390121, guid: 9c49aa1a01829fd4abee2373a65e45af, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2687651398579390121, guid: 9c49aa1a01829fd4abee2373a65e45af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13456,7 +13460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightStatus: 0
   player: {fileID: 1127321184}
-  LightCube: {fileID: 0}
+  LightCube: {fileID: 1627822656}
   LightPos_Y: 2
 --- !u!4 &1187145385
 Transform:
@@ -18579,6 +18583,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4422338931104976, guid: da24672af79d5b04da5388660c6aabd9, type: 3}
   m_PrefabInstance: {fileID: 1586167998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1627822656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7396225376167089752, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+  m_PrefabInstance: {fileID: 520640186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1632670906
 GameObject:
   m_ObjectHideFlags: 0
@@ -23554,7 +23563,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1836827724}
   lightCamera: {fileID: 1686576358}
   freeCamera: {fileID: 257177474}
-  lightball: {fileID: 0}
+  lightball: {fileID: 1627822656}
 --- !u!4 &2142749294
 Transform:
   m_ObjectHideFlags: 0
