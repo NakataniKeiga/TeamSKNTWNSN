@@ -12777,6 +12777,10 @@ PrefabInstance:
       propertyPath: targetobject
       value: 
       objectReference: {fileID: 2084870667}
+    - target: {fileID: 7396225375514621501, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2084870667}
     - target: {fileID: 7396225376167089745, guid: b77caa72f6b68ac47a8fabb426aec12a, type: 3}
       propertyPath: m_RootOrder
       value: 1
