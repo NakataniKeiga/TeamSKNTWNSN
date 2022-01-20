@@ -30,7 +30,7 @@ public class FrameButton : MonoBehaviour
         }
 
         /// yƒGƒNƒXƒgƒ‰z‚Ì‚Ì˜g‚ÌˆÊ’u
-        else if (StageManager.m_instance.m_select == "E_1F")
+        else if (StageManager.m_instance.ExFlg == true)
         {
             Pos.x = 0.0f;
         }

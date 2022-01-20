@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
 
     /// ˜g‚ª‚Ç‚±‚É‚¢‚é‚©‚ğ•Û‘¶‚·‚é•Ï”(Å‰‚ÍPlay‚É‚¢‚é)
     public string m_select = "Play";
+    public bool ExFlg = false;
 
     // Start is called before the first frame update
     void Start()
