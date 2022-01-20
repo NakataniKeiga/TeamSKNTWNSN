@@ -33,7 +33,7 @@ public class ExStageGaol : MonoBehaviour
             {
                 case 0:
                     {
-                        SceneManager.LoadScene("E_1F", LoadSceneMode.Single);
+                        SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                         Debug.Log("Scene‚ğXV");
                     }break;
                 case 1:
